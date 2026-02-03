@@ -51,7 +51,9 @@ Du ska skapa en liten "budget-app". I appen ska det finnas med:
 
 ## Flöde:
 
-1. Uppgift: lägg till ifylld siffra från input-fält (id="incomeSum") genom att trycka på "Lägg till-knappen"
-(id="addIncomeBtn). Siffran ska då dyka upp i input-fält "Inkommande:" (id="calculateSum")
+[x] 1. Uppgift: lägg till ifylld siffra från input-fält Summa (id="incomeSum") genom att trycka på "Lägg till-knappen"
+(id="addIncomeBtn). Siffran ska då dyka upp i input-fält "Inkommande:" (id="calculateIncome")
 
+[] 2. Uppgift: lägg till ifylld siffra från input-fält Summa  (id="expenseSum") genom att trycka på "Lägg till-knappen
+("id="addExpenseBtn"). Siffran ska då dyka upp i input-fält "Utgående:" (id="calculateExpense")
 

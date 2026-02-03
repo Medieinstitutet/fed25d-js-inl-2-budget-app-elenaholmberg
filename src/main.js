@@ -21,3 +21,8 @@ addBtn.addEventListener("click", function () {
   resultInput.value = total;
   incomeInput.value = "";
 });
+
+
+/*
+[] 2. Uppgift: lägg till ifylld siffra från input-fält Summa  (id="expenseSum") genom att trycka på "Lägg till-knappen
+("id="addExpenseBtn"). Siffran ska då dyka upp i input-fält "Utgående:" (id="calculateExpense")
