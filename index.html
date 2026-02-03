@@ -10,17 +10,29 @@
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
 
-    <header>MIN BUDGET:</header>
+    <header>
+      <h1>MIN BUDGET:</h1>
+    </header>
 
     <form action="">
-      <!--action anger vart formuläret skickas när användaren klickar på “Skicka”.-->
-
       <fieldset>
-        <legend>UTGIFT</legend>
+        <legend>
+          <h2>INKOMSTER</h2>
+        </legend>
+        <label for="">beskrivning:</label>
+        <input type="text" placeholder="ex. lön" />
+        <label for="">summa:</label>
+        <input type="number" placeholder="ex. 10 000" /> kr
       </fieldset>
 
       <fieldset>
-        <legend>INKOMST</legend>
+        <legend>
+          <h2>UTGIFTER</h2>
+        </legend>
+        <label for="">beskrivning:</label>
+        <input type="text" placeholder="ex. tjejfika" />
+        <label for="">summa:</label>
+        <input type="number" placeholder="ex. 100" /> kr
       </fieldset>
     </form>
   </body>
