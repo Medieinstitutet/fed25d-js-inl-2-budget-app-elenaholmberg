@@ -2,14 +2,12 @@
 <html lang="sv">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="src/style.css" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>fed25d-js-inl-2-budget-app-elenaholmberg</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-
     <header>
       <h1>MIN BUDGET:</h1>
     </header>
@@ -17,23 +15,37 @@
     <form action="">
       <fieldset>
         <legend>
-          <h2>INKOMSTER</h2>
+          <h2>INKOMSTER i kr</h2>
         </legend>
-        <label for="">beskrivning:</label>
-        <input type="text" placeholder="ex. lön" />
-        <label for="">summa:</label>
-        <input type="number" placeholder="ex. 10 000" /> kr
+        <div class="incomeAndExpense">
+          <label for="">beskrivning:</label>
+          <input
+            id="incomeDescription"
+            type="text"
+            placeholder="ex. tjejfika"
+          />
+          <label for="">summa:</label>
+          <input id="incomeSum" type="number" placeholder="ex. 100" />
+        </div>
       </fieldset>
 
       <fieldset>
         <legend>
-          <h2>UTGIFTER</h2>
+          <h2>UTGIFTER i kr</h2>
         </legend>
-        <label for="">beskrivning:</label>
-        <input type="text" placeholder="ex. tjejfika" />
-        <label for="">summa:</label>
-        <input type="number" placeholder="ex. 100" /> kr
+        <div class="incomeAndExpense">
+          <label for="">beskrivning:</label>
+          <input
+            id="expenseDescription"
+            type="text"
+            placeholder="ex. tjejfika"
+          />
+          <label for="">summa:</label>
+          <input id="expenseSum" type="number" placeholder="ex. 100" />
+        </div>
       </fieldset>
     </form>
+
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
