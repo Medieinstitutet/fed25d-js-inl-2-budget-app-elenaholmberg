@@ -1,9 +1,64 @@
 const incomeInput = document.getElementById("incomeSum");
 
-Tänk så här:
-Del	            Betyder	                                Tänk
-const	        Skapar en variabel som inte byts ut	    En fast pekare
-incomeInput	    Namnet på variabeln	                    Vad är det för något?
-document	    Hela HTML-sidan	                        Pappret
-getElementById	Hitta ett element via id	            Leta upp
-"incomeSum"	    ID från HTML	                        Namnskylten
+| Del              | Betyder                             | Tänk                  |
+| ---------------- | ----------------------------------- | --------------------- |
+| `const`          | Skapar en variabel som inte byts ut | En fast pekare        |
+| `incomeInput`    | Namnet på variabeln                 | Vad är det för något? |
+| `document`       | Hela HTML-sidan                     | Pappret               |
+| `getElementById` | Hitta ett element via id            | Leta upp              |
+| `"incomeSum"`    | ID från HTML                        | Namnskylten           |
+
+
+//if//
+if (!value) {
+  alert("Skriv in ett tal!");
+  return;
+}
+
+
+| Del        | Betyder            |     
+| ---------- | ------------------ |
+| `if`       | Om                 |
+| `(!value)` | Om inget tal finns |
+| `{ ... }`  | Det som ska hända  |
+| `return`   | Stoppar funktionen |
+| `else`     | Annars (valfritt)  |
+
+
+Vanliga jämförelser:
+
+| Kod   | Betyder      |   |       |
+| ----- | ------------ | - | ----- |
+| `==`  | lika (slapp) |   |       |
+| `===` | exakt lika   |   |       |
+| `!=`  | inte lika    |   |       |
+| `>`   | större än    |   |       |
+| `<`   | mindre än    |   |       |
+| `&&`  | och          |   |       |
+| `     |              | ` | eller |
+
+
+
+//event//
+
+addBtn.addEventListener("click", function () {
+  alert("Du klickade!");
+});
+
+| Del              | Betyder           |
+| ---------------- | ----------------- |
+| `addBtn`         | Vad vi lyssnar på |
+| `"click"`        | Vad som händer    |
+| `function () {}` | Vad som ska göras |
+|
+
+
+Vanliga events
+
+Event       | När?             |
+| ----------- | ---------------- |
+| `"click"`   | Klick            |
+| `"submit"`  | Form skickas     |
+| `"input"`   | När man skriver  |
+| `"change"`  | När värde ändras |
+| `"keydown"` | Tangent trycks   |
