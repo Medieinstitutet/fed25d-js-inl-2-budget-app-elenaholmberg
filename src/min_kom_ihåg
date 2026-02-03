@@ -1,0 +1,9 @@
+const incomeInput = document.getElementById("incomeSum");
+
+Tänk så här:
+Del	            Betyder	                                Tänk
+const	        Skapar en variabel som inte byts ut	    En fast pekare
+incomeInput	    Namnet på variabeln	                    Vad är det för något?
+document	    Hela HTML-sidan	                        Pappret
+getElementById	Hitta ett element via id	            Leta upp
+"incomeSum"	    ID från HTML	                        Namnskylten
