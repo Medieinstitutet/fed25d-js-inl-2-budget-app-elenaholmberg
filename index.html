@@ -17,37 +17,59 @@
         <legend>IN & UT</legend>
 
         <div class="incomeAndExpense">
-          <label
-            >Inkomst:
-            <input
-              id="incomeDescription"
-              type="text"
-              placeholder="ex. tjejfika"
-            />
-          </label>
+          <div class="incomeContainer">
+            <label
+              >Inkomst:
+              <input id="incomeDescription" type="text" placeholder="ex. lön" />
+            </label>
 
-          <label
-            >summa:
-            <input id="incomeSum" type="number" placeholder="ex. 100" />
-          </label>
+            <label
+              >summa:
+              <input id="incomeSum" type="number" placeholder="ex. 100" />
+            </label>
 
-          <button type="button" id="addIncomeBtn">Lägg till</button>
+            <button type="button" id="addIncomeBtn">Lägg till</button>
+          </div>
+
+          <div class="expenseContainer">
+            <label>
+              Utgift:
+              <input
+                id="expenseDescription"
+                type="text"
+                placeholder="ex. fika"
+              />
+            </label>
+
+            <label
+              >Summa:
+              <input type="number" id="expenseSum" placeholder="ex. 100" />
+            </label>
+
+            <button type="button">Lägg till</button>
+          </div>
         </div>
       </fieldset>
 
       <fieldset>
         <!--   <div class="calculatingBox">-->
         <legend>UTRÄKNING</legend>
+        <div class="calculatingContainer">
+          <label
+            >Inkommande:
+            <input id="calculateIncome" type="number" />
+          </label>
 
-        <label
-          >Inkommande:
-          <input id="calculateSum" type="number" placeholder="ex. 100" />
-        </label>
+          <label
+            >Utgående:
+            <input id="calculateExpense" type="number" />
+          </label>
 
-        <label
-          >Utgående:
-          <input id="expenseSum" type="number" placeholder="ex. 100" />
-        </label>
+          <label
+            >TOTALT:
+            <input id="totalSum" type="number" />
+          </label>
+        </div>
       </fieldset>
     </form>
 

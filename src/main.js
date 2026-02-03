@@ -4,7 +4,7 @@ import "./style.css";
 // Hämta elementen från HTML
 const incomeInput = document.getElementById("incomeSum");
 const addBtn = document.getElementById("addIncomeBtn");
-const resultInput = document.getElementById("calculateSum");
+const resultInput = document.getElementById("calculateIncome");
 
 // När man klickar på knappen
 let total = 0;

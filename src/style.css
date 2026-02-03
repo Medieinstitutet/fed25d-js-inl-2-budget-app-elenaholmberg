@@ -1,11 +1,13 @@
 .incomeAndExpense,
-.calculatingBox {
+.calculatingContainer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
   padding: 20px;
 }
 
-.calculatingBox {
-  flex-direction: column;
-  gap: 20px;
+.incomeContainer,
+.expenseContainer {
+  display: flex;
+  justify-content: space-between;
 }
