@@ -15,7 +15,7 @@ let totalIncome = 0; //värdet ska nollas efter varje gång
 
 addBtn.addEventListener("click", function () {
   const value = Number(incomeInput.value);
-  /*input-fält är alltid sträng så jag måste göra om till Number. 
+  /*input-fält är alltid sträng, så jag måste göra om till Number. 
   Const value =... betyder att vi sparar om siffran i en variabel. Variabeln döper jag till value.
   dvs value är samma som incomeInput som i html heter #incomeSum (=>#incomeSum =>incomeInput =>value */
 
@@ -34,3 +34,9 @@ const addBtn2 = document.getElementById("#addExpenseBtn");
 const resultInput2 = document.getElementById("calculateExpense");
 
 let totalExpense = 0;
+
+addBtn2.addEventListener("click", function () {
+  const value = Number(expenseInput.value);
+
+  totalExpense = totalExpense + value;
+});
