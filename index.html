@@ -8,6 +8,8 @@
     <title>fed25d-js-inl-2-budget-app-elenaholmberg</title>
   </head>
   <body>
+    <script type="module" src="src/main.js"></script>
+
     <header>
       <h1>MIN BUDGET:</h1>
     </header>
@@ -26,7 +28,7 @@
             <label for="">summa:</label>
             <input id="incomeSum" type="number" placeholder="ex. 100" />
 
-            <button>Lägg till</button>
+            <button id="addIncomeBtn">Lägg till</button>
           </div>
 
          
@@ -41,7 +43,7 @@
           <label for="">summa:</label>
           <input id="expenseSum" type="number" placeholder="ex. 100" />
 
-          <button>Lägg till</button>
+          <button id="addBtn">Lägg till</button>
         </div>
       </fieldset>
 
@@ -51,7 +53,7 @@
 
         <div class="calculatingBox">
               <label for="">Inkommande:
-          <input id="expenseSum" type="number" placeholder="ex. 100" />
+          <input id="incomeSum" type="number" placeholder="ex. 100" />
        </label>
 
           
@@ -63,6 +65,6 @@
       </fieldset>
     </form>
 
-    <script type="module" src="/src/main.js"></script>
+    
   </body>
 </html>
