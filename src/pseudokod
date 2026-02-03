@@ -8,7 +8,7 @@
 
 # Vecka 1 (2-6 februari) - Grundläggande JavaScript, repetition
 
-## Flöde:
+
 
 Du ska skapa en liten "budget-app". I appen ska det finnas med:
 
@@ -45,3 +45,12 @@ Du ska skapa en liten "budget-app". I appen ska det finnas med:
 - Kategorierna ska läsas in via JSON. Vi går igenom detta på lektionen. Nytt
 
 [] hur gör jag denna? Ta reda på och skriv pseudokod
+
+
+
+
+## Flöde:
+
+1. Uppgift: lägg till ifylld siffra från input-fält (id="incomeSum") genom att trycka på "Lägg till-knappen"
+(id="addIncomeBtn). Siffran ska då dyka upp i input-fält "Inkommande:" (id="calculateSum")
+
