@@ -54,3 +54,26 @@ Du ska skapa en liten "budget-app". I appen ska det finnas med:
 1. Uppgift: lägg till ifylld siffra från input-fält (id="incomeSum") genom att trycka på "Lägg till-knappen"
 (id="addIncomeBtn). Siffran ska då dyka upp i input-fält "Inkommande:" (id="calculateSum")
 
+
+
+import "./style.css";
+
+//Hämtar alla mina element från html//
+
+const incomePost = document.getElementById("#incomeSum");
+const addBtn = document.getElementById("#addIncomeBtn");
+const incomeCalculate = document.getElementById("#calculateSum");
+
+
+let total = 0;
+
+
+//Vid klick på "Lägg till-knappen"//
+addBtn.addEventListener("click", function () {
+  const value = Number(incomePost.value);
+}
+
+
+total += value;
+
+incomeCalculate.value = total;

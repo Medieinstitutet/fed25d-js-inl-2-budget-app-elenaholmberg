@@ -1,15 +1,23 @@
 import "./style.css";
 
-/*orderForm(); // startar formulärlogiken
-// Tom array som ska innehålla varukorgen
+//Hämtar alla mina element från html//
+// Hämta elementen från HTML
+const incomeInput = document.getElementById("incomeSum");
+const addBtn = document.getElementById("addIncomeBtn");
+const resultInput = document.getElementById("calculateSum");
 
-/*const incomeSum = [
-  {
-    
+// När man klickar på knappen
+let total = 0;
+
+addBtn.addEventListener("click", function () {
+  const value = Number(incomeInput.value);
+
+  if (!value) {
+    alert("Skriv in ett tal!");
+    return;
   }
-] */ const addIncomeBtn = document.querySelector("#incomeSum");
-addEventListener(
-  "click",
-  addIncomeBtn,
-); /*Kopplar oss till olika platser i HTML-dokumentet.
- querySelector hämtar element med angivet id.*/
+
+  total += value;
+  resultInput.value = total;
+  incomeInput.value = "";
+});
