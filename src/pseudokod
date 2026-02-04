@@ -12,48 +12,50 @@
 
 Du ska skapa en liten "budget-app". I appen ska det finnas med:
 
-- Ett fält för att mata in en utgift (belopp och beskrivning), och samma för inkomst
-  1. skapa ett formulär i index.html.
-  2. gör en text-input med label och placeholder för följande:
-     [] utgift summa, utgift beskrivning
-     [] inkomst summa, inkomst beskrivning
+[x] 1. Ett fält för att mata in en utgift (belopp och beskrivning), och samma för inkomst
+ 
 
-- Bredvid varje budgetpost ska det finnas en radera-knapp
+[] 2. Bredvid varje budgetpost ska det finnas en radera-knapp
 
-[] hur gör jag denna? Ta reda på och skriv pseudokod
 
-- Det ska visas en balans (inkomster minus utgifter)
+[] Det ska visas en balans (inkomster minus utgifter)
 
-[] hur gör jag denna? Ta reda på och skriv pseudokod
 
-- Balansens ska färgkodas beroende på om det är ett positivt eller negativt värde
 
-[] hur gör jag denna? Ta reda på och skriv pseudokod
+[] Balansens ska färgkodas beroende på om det är ett positivt eller negativt värde
 
-- Balansen ska uppdateras varje gång en ny utgift eller inkomst matas in
 
-[] hur gör jag denna? Ta reda på och skriv pseudokod
 
-- Till varje budgetpost ska det gå att välja en kategori från en dropdown-lista (select)
+[] Balansen ska uppdateras varje gång en ny utgift eller inkomst matas in
 
-[] hur gör jag denna? Ta reda på och skriv pseudokod
 
-- Informationen ska sparas i local storage så att när användaren kommer till sidan nästa gång, så ska informationen finnas kvar. Nytt
 
-[] hur gör jag denna? Ta reda på och skriv pseudokod
+[] Till varje budgetpost ska det gå att välja en kategori från en dropdown-lista (select)
 
-- Kategorierna ska läsas in via JSON. Vi går igenom detta på lektionen. Nytt
 
-[] hur gör jag denna? Ta reda på och skriv pseudokod
+
+[] Informationen ska sparas i local storage så att när användaren kommer till sidan nästa gång, så ska informationen finnas kvar. Nytt
+
+
+
+[] Kategorierna ska läsas in via JSON. Vi går igenom detta på lektionen. Nytt
+
+
 
 
 
 
 ## Flöde:
 
-[x] 1. Uppgift: lägg till ifylld siffra från input-fält Summa (id="incomeSum") genom att trycka på "Lägg till-knappen"
+1.
+
+[x]  Uppgift: lägg till ifylld siffra från input-fält Summa (id="incomeSum") genom att trycka på "Lägg till-knappen"
 (id="addIncomeBtn). Siffran ska då dyka upp i input-fält "Inkommande:" (id="calculateIncome")
 
-[] 2. Uppgift: lägg till ifylld siffra från input-fält Summa  (id="expenseSum") genom att trycka på "Lägg till-knappen
+[x] . Uppgift: lägg till ifylld siffra från input-fält Summa  (id="expenseSum") genom att trycka på "Lägg till-knappen
 ("id="addExpenseBtn"). Siffran ska då dyka upp i input-fält "Utgående:" (id="calculateExpense")
 
+2. 
+
+[] Uppgift: skapa radera-knapp i html. => hämta upp värdet i JS med querySelector => ge knappen en uppgift med addEventListener
+=> händelsen radera utförs med hjälp av en funktion.

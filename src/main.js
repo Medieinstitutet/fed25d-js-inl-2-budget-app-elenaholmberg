@@ -29,8 +29,8 @@ addBtn.addEventListener("click", function () {
 ///-------------------UT-------------------///
 ///-----------------------------------------///
 
-const expenseInput = document.getElementById("#expenseSum");
-const addBtn2 = document.getElementById("#addExpenseBtn");
+const expenseInput = document.getElementById("expenseSum");
+const addBtn2 = document.getElementById("addExpenseBtn");
 const resultInput2 = document.getElementById("calculateExpense");
 
 let totalExpense = 0;
@@ -39,4 +39,7 @@ addBtn2.addEventListener("click", function () {
   const value = Number(expenseInput.value);
 
   totalExpense = totalExpense + value;
+
+  resultInput2.value = totalExpense;
+  expenseInput.value = "";
 });
