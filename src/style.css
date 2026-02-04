@@ -11,3 +11,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+/*BUTTONS*/
+.btnStyle {
+  width: 70px;
+  margin-left: 20px;
+}

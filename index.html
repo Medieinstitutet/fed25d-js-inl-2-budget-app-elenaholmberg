@@ -55,16 +55,26 @@
         <!--   <div class="calculatingBox">-->
         <legend>UTRÄKNING</legend>
         <div class="calculatingContainer">
-          <label
-            >Inkommande:
-            <input id="calculateIncome" type="number" />
-          </label>
+          <div>
+            <label
+              >Inkommande:
+              <input id="calculateIncome" type="number" />
+            </label>
 
-          <label
-            >Utgående:
-            <input id="calculateExpense" type="number" />
-          </label>
+            <button type="button" id="eraseIncome" class="btnStyle">
+              Radera
+            </button>
+          </div>
 
+          <div>
+            <label
+              >Utgående:
+              <input id="calculateExpense" type="number" />
+            </label>
+            <button type="button" id="eraseExpense" class="btnStyle">
+              Radera
+            </button>
+          </div>
           <label
             >TOTALT:
             <input id="totalSum" type="number" />
