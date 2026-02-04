@@ -18,13 +18,8 @@ Du ska skapa en liten "budget-app". I appen ska det finnas med:
 [x] 2. Bredvid varje budgetpost ska det finnas en radera-knapp
 
 
-[] Det ska visas en balans (inkomster minus utgifter)
-- Skapa en funktion som:
-tar totalIncome
+[x] Det ska visas en balans (inkomster minus utgifter)
 
-tar totalExpense
-
-sätter totalSum.value till skillnaden
 
 
 

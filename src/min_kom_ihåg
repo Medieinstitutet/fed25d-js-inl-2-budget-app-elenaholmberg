@@ -95,3 +95,20 @@ function updateTotal() → //skapar en egen funktion som gör uträkningen när 
 const result = totalIncome - totalExpense → //använder siffrorna vi sparat i minnet, inte HTML-elementen, och räknar skillnaden.
 
 totalSum.value = result → //visar resultatet i input-rutan på sidan.
+
+
+
+//färgkoda
+
+if (result >= 0) {
+  totalSum.style.color = "green";
+} else {
+  totalSum.style.color = "red";
+}
+Förklaring rad för rad:
+
+totalSum.style.color = "green" → //ändrar textfärg i inputen till grön.
+
+totalSum.style.color = "red" → //ändrar textfärg till röd om vi har minusbalans.
+
+if (result >= 0) → //inkluderar noll som plus, annars röd.

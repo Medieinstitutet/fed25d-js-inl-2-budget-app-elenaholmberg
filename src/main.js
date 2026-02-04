@@ -84,7 +84,11 @@ const totalSum = document.getElementById("totalSum"); // Hämta TOTALT-inputen f
 // Skapa en funktion som räknar totalen
 function updateTotal() {
   const result = totalIncome - totalExpense;
+  totalSum.value = result; // Sätt resultatet i TOTALT-rutan så användaren ser summan
 
-  // Sätt resultatet i TOTALT-rutan så användaren ser summan
-  totalSum.value = result;
+  if (result >= 0) {
+    totalSum.style.color = "green";
+  } else {
+    totalSum.style.color = "red";
+  }
 }
