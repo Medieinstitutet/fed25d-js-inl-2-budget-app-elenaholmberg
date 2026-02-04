@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=payment_arrow_down"
+    />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>fed25d-js-inl-2-budget-app-elenaholmberg</title>
@@ -12,6 +16,58 @@
       <h1>MIN BUDGET:</h1>
     </header>
 
+    <form>
+      <fieldset>
+        <legend>INKOMSTER & UTGIFTER</legend>
+        <div class="inputContainer">
+          <label for="sum"></label>
+          Summa:
+          <input type="number" placeholder="ex. -100/ 100" />
+
+          <label for="Description:"></label>
+          Beskrivning:
+          <input type="number" placeholder="ex. Lön/ Fika" />
+        </div>
+
+        <div>
+          <h3></h3>
+          <label for="addIncomeBtn">
+            <input type="radio" />
+            INKOMST
+          </label>
+          <label for="addExpenseBtn">
+            <input type="radio" />
+            UTGIFT
+          </label>
+        </div>
+        <button type="button" id="addBtn">Lägg till</button>
+      </fieldset>
+
+      <span class="material-symbols-outlined"> payment_arrow_down </span>
+
+      <fieldset>
+        <legend>RESULTAT</legend>
+
+        <div class="resultContainer">
+          <label for="income">
+            INKOMST:
+            <input type="number" />
+          </label>
+
+          <label for="expense"
+            >UTGIFT:
+            <input type="number" />
+          </label>
+        </div>
+
+        <div class="resultInput">
+          <label for="result" class="resultLabel"></label>
+          BALANS:
+          <input type="number"/>
+      </fieldset>
+    </form>
+
+    <!--
     <form>
       <fieldset>
         <legend>IN & UT</legend>
@@ -52,7 +108,8 @@
       </fieldset>
 
       <fieldset>
-        <!--   <div class="calculatingBox">-->
+   
+        
         <legend>UTRÄKNING</legend>
         <div class="calculatingContainer">
           <div>
@@ -82,7 +139,7 @@
         </div>
       </fieldset>
     </form>
-
+-->
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
