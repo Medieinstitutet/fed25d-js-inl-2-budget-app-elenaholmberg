@@ -48,11 +48,27 @@ addBtn2.addEventListener("click", function () {
 ///--------------UTRÄKNING------------///
 ///-----------------------------------///
 
+///Inkommande///
 const calculateIncome = document.getElementById("calculateIncome"); //hämtar värdet från inputen i html
 const eraseIncomeBtn = document.getElementById("eraseIncomeBtn");
+
+let totalIncomeErase = 0;
 
 eraseIncomeBtn.addEventListener("click", function () {
   const value = Number(calculateIncome.value);
 
-  calculateIncome.value = totalExpense;
+  calculateIncome.value = totalIncomeErase;
+});
+
+///Utgående///
+
+const calculateExpense = document.getElementById("calculateExpense");
+const eraseExpenseBtn = document.getElementById("eraseExpenseBtn");
+
+let totalExpenseErase = 0;
+
+eraseExpenseBtn.addEventListener("click", function () {
+  const value = Number(calculateExpense.value);
+
+  calculateExpense.value = totalExpenseErase;
 });
