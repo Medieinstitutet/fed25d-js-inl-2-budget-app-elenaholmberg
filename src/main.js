@@ -23,6 +23,8 @@ addBtn.addEventListener("click", function () {
 
   resultInput.value = totalIncome;
   incomeInput.value = "";
+
+  updateTotal(); //skriver ut svaret i rutan
 });
 
 ///----------------------------------------///
@@ -42,6 +44,7 @@ addBtn2.addEventListener("click", function () {
 
   resultInput2.value = totalExpense;
   expenseInput.value = "";
+  updateTotal();
 });
 
 ///-----------------------------------///
@@ -80,11 +83,8 @@ const totalSum = document.getElementById("totalSum"); // Hämta TOTALT-inputen f
 
 // Skapa en funktion som räknar totalen
 function updateTotal() {
-  // Räkna ut skillnaden mellan de totala inkomsterna och de totala utgifterna
-  // totalIncome och totalExpense är variabler som du uppdaterar när användaren klickar på knappar
   const result = totalIncome - totalExpense;
 
   // Sätt resultatet i TOTALT-rutan så användaren ser summan
   totalSum.value = result;
 }
-//updateTotal är ett ord som jag själv väljer. I denna funktionen ska allt räknas ihop

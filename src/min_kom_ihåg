@@ -65,11 +65,33 @@ Event       | När?             |
 
 
 💡 Förklaringar:
+//----IN & UT-----//
+
+// Lägg till en "click"-händelse på knappen addBtn (Lägg till inkomst)
+addBtn.addEventListener("click", function () {
+
+  // 1. Hämta värdet från inkomst-inputen (incomeInput) och gör om det till ett nummer
+  //    input.value är alltid en sträng, därför använder vi Number()
+  const value = Number(incomeInput.value);
+
+  // 2. Lägg till värdet i totalIncome
+  //    totalIncome = totalIncome + value
+  //    betyder: ta det som redan finns i totalIncome och lägg till det nya värdet
+  totalIncome = totalIncome + value;
+
+  // 3. Visa det nya totala värdet i inputen resultInput (calculateIncome i HTML)
+  resultInput.value = totalIncome;
+
+  // 4. Töm inputfältet incomeInput så användaren kan skriva en ny inkomst utan att radera manuellt
+  incomeInput.value = "";
+});
+
+//---Totalt----//
 
 document.getElementById("totalSum") → kopplar JS till HTML-elementet med id totalSum.
 
-function updateTotal() → skapar en egen funktion som gör uträkningen när vi vill.
+function updateTotal() → //skapar en egen funktion som gör uträkningen när vi vill. updateTotal är ett ord som jag själv väljer. I denna funktionen ska allt räknas ihop
 
-const result = totalIncome - totalExpense → använder siffrorna vi sparat i minnet, inte HTML-elementen, och räknar skillnaden.
+const result = totalIncome - totalExpense → //använder siffrorna vi sparat i minnet, inte HTML-elementen, och räknar skillnaden.
 
-totalSum.value = result → visar resultatet i input-rutan på sidan.
+totalSum.value = result → //visar resultatet i input-rutan på sidan.
