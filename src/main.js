@@ -43,3 +43,16 @@ addBtn2.addEventListener("click", function () {
   resultInput2.value = totalExpense;
   expenseInput.value = "";
 });
+
+///-----------------------------------///
+///--------------UTRÄKNING------------///
+///-----------------------------------///
+
+const calculateIncome = document.getElementById("calculateIncome"); //hämtar värdet från inputen i html
+const eraseIncomeBtn = document.getElementById("eraseIncomeBtn");
+
+eraseIncomeBtn.addEventListener("click", function () {
+  const value = Number(calculateIncome.value);
+
+  calculateIncome.value = totalExpense;
+});
