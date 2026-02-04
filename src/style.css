@@ -20,27 +20,24 @@
 }*/
 
 .inputContainer {
-  display: flex;
-  flex-direction: column;
-
-  gap: 10px;
+  background-color: bisque;
+  padding: 40px;
 }
 
-fieldset {
-  width: 50%;
-  padding: 30px;
+.cathegoryContainer,
+.expenseRadioBtn,
+.incomeRadioBtn {
+  background-color: burlywood;
+  padding: 20px;
 }
 
-#addBtn {
-  margin-top: 20px;
+.addBtn {
+  margin: 60px;
 }
 
-.resultContainer {
-  display: flex;
-
-  padding-bottom: 70px;
-}
-
-.resultLabel {
-  width: 300px;
+/*resultatrutan*/
+.allArray {
+  background-color: cadetblue;
+  height: 100px;
+  margin-bottom: 20px;
 }

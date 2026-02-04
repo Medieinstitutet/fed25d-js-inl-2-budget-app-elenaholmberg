@@ -112,3 +112,8 @@ totalSum.style.color = "green" → //ändrar textfärg i inputen till grön.
 totalSum.style.color = "red" → //ändrar textfärg till röd om vi har minusbalans.
 
 if (result >= 0) → //inkluderar noll som plus, annars röd.
+
+
+
+
+Tecknet Pipe | skrivs med option + 7

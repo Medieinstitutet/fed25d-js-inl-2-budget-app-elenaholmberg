@@ -4,91 +4,22 @@ import "./style.css";
 ///-------------------IN-------------------///
 ///-----------------------------------------///
 
-// Hämta elementen från HTML  //varför döper man inte variabeln till samma som tillhörande id?
-const incomeInput = document.getElementById("incomeSum"); //här skriver användaren sitt tal
-const addBtn = document.getElementById("addIncomeBtn"); //Lägg till-knappen
-const resultInput = document.getElementById("calculateIncome"); //Hit flyttas talet
+const incoming = document.getElementById("incoming"); //här skriver användaren sitt tal
+const chooseIncomeBtn = document.getElementById("chooseIncomeBtn"); //Inkomst radio-button
+const addBtn = document.getElementById("addBtn"); //knappen flyttar ner summan i nästa fieldset
+const incomeInput = document.getElementById("incomeInput");
+///--- När man klickar på radiobutton----///
 
-// När man klickar på knappen
-
-let totalIncome = 0; //värdet ska nollas efter varje gång
+let totalIncome = 0;
 
 addBtn.addEventListener("click", function () {
-  const value = Number(incomeInput.value);
+  const value = Number(incoming.value);
   /*input-fält är alltid sträng, så jag måste göra om till Number. 
   Const value =... betyder att vi sparar om siffran i en variabel. Variabeln döper jag till value.
-  dvs value är samma som incomeInput som i html heter #incomeSum (=>#incomeSum =>incomeInput =>value */
+  dvs value är värdet "incoming" fast i nummer-format.*/
 
-  totalIncome = totalIncome + value; //förstår inte helt vad denna rad är, gör eller kommer ifrån?
+  if (!chooseIncomeBtn.checked) return;
+  if (isNaN(value) || value === 0) return;
 
-  resultInput.value = totalIncome;
-  incomeInput.value = "";
-
-  updateTotal(); //skriver ut svaret i rutan
+  totalIncome = totalIncome + value; //    betyder: ta det som redan finns i totalIncome och lägg till det nya värdet
 });
-
-///----------------------------------------///
-///-------------------UT-------------------///
-///-----------------------------------------///
-
-const expenseInput = document.getElementById("expenseSum");
-const addBtn2 = document.getElementById("addExpenseBtn");
-const resultInput2 = document.getElementById("calculateExpense");
-
-let totalExpense = 0;
-
-addBtn2.addEventListener("click", function () {
-  const value = Number(expenseInput.value);
-
-  totalExpense = totalExpense + value;
-
-  resultInput2.value = totalExpense;
-  expenseInput.value = "";
-  updateTotal();
-});
-
-///-----------------------------------///
-///--------------UTRÄKNING------------///
-///-----------------------------------///
-
-///Inkommande///
-const calculateIncome = document.getElementById("calculateIncome"); //hämtar värdet från inputen i html
-const eraseIncomeBtn = document.getElementById("eraseIncomeBtn");
-
-let totalIncomeErase = 0;
-
-eraseIncomeBtn.addEventListener("click", function () {
-  const value = Number(calculateIncome.value);
-
-  calculateIncome.value = totalIncomeErase;
-});
-
-///Utgående///
-
-const calculateExpense = document.getElementById("calculateExpense");
-const eraseExpenseBtn = document.getElementById("eraseExpenseBtn");
-
-let totalExpenseErase = 0;
-
-eraseExpenseBtn.addEventListener("click", function () {
-  const value = Number(calculateExpense.value);
-
-  calculateExpense.value = totalExpenseErase;
-});
-
-///Totalt///
-
-const totalSum = document.getElementById("totalSum"); // Hämta TOTALT-inputen från HTML
-// Detta är rutan där summan (inkomst - utgift) ska visas
-
-// Skapa en funktion som räknar totalen
-function updateTotal() {
-  const result = totalIncome - totalExpense;
-  totalSum.value = result; // Sätt resultatet i TOTALT-rutan så användaren ser summan
-
-  if (result >= 0) {
-    totalSum.style.color = "green";
-  } else {
-    totalSum.style.color = "red";
-  }
-}

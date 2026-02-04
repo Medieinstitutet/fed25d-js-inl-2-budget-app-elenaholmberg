@@ -2,7 +2,7 @@
 <html lang="sv">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=payment_arrow_down"
@@ -17,51 +17,67 @@
     </header>
 
     <form>
+      <!--Ruta som användaren fyller i-->
       <fieldset>
         <legend>
           <h2>INKOMSTER & UTGIFTER</h2>
         </legend>
+
+        <div class="cathegoryContainer">
+          <div class="incomeRadioBtn">
+            <label>
+              <input type="radio" id="chooseIncomeBtn" />
+              INKOMST
+            </label>
+
+            <select id="cathegoryList">
+              <option value="Glazed">Lön</option>
+              <option value="Sprinkled">Studiebidrag</option>
+              <option value="Classic">Bostadsbidrag</option>
+              <option value="All">Övrigt</option>
+            </select>
+          </div>
+
+          <div class="expenseRadioBtn">
+            <label>
+              <input type="radio" id="chooseExpenseBtn" />
+              UTGIFT
+            </label>
+            <select id="cathegoryList">
+              <option value="Glazed">Lön</option>
+              <option value="Sprinkled">Studiebidrag</option>
+              <option value="Classic">Bostadsbidrag</option>
+              <option value="All">Övrigt</option>
+            </select>
+          </div>
+        </div>
+
         <div class="inputContainer">
           <label>
             Summa:
-            <input type="number" placeholder="ex. -100/ 100" />
+            <input type="number" id="incoming" placeholder="+ / -100" />
           </label>
 
           <label>
             Beskrivning:
-            <input type="number" placeholder="ex. Lön/ Fika" />
+            <input type="number" id="outgoing" placeholder="ex. Lön/ Fika" />
           </label>
+
+          <button type="button" id="addBtn" class="addBtn">Lägg till</button>
         </div>
 
-        <div>
-          <label>
-            <input type="radio" />
-            INKOMST
-          </label>
-          <label>
-            <input type="radio" />
-            UTGIFT
-          </label>
-        </div>
-        <button type="button" id="addBtn">Lägg till</button>
+        <!---radiobuttons-->
       </fieldset>
 
       <span class="material-symbols-outlined"> payment_arrow_down </span>
 
+      <!------Resultat-rutan------->
       <fieldset>
         <legend>RESULTAT</legend>
 
-        <div class="resultContainer">
-          <label>
-            INKOMST:
-            <input type="number" />
-          </label>
+        <div class="allArray">Inkomst:</div>
 
-          <label>
-            UTGIFT:
-            <input type="number" />
-          </label>
-        </div>
+        <div class="allArray">Utgifter:</div>
 
         <div class="resultInput">
           <label class="resultLabel">
@@ -72,79 +88,6 @@
       </fieldset>
     </form>
 
-    <!--
-    <form>
-      <fieldset>
-        <legend>IN & UT</legend>
-
-        <div class="incomeAndExpense">
-          <div class="incomeContainer">
-            <label
-              >Inkomst:
-              <input id="incomeDescription" type="text" placeholder="ex. lön" />
-            </label>
-
-            <label
-              >summa:
-              <input id="incomeSum" type="number" placeholder="ex. 100" />
-            </label>
-
-            <button type="button" id="addIncomeBtn">Lägg till</button>
-          </div>
-
-          <div class="expenseContainer">
-            <label>
-              Utgift:
-              <input
-                id="expenseDescription"
-                type="text"
-                placeholder="ex. fika"
-              />
-            </label>
-
-            <label
-              >Summa:
-              <input id="expenseSum" type="number" placeholder="ex. 100" />
-            </label>
-
-            <button type="button" id="addExpenseBtn">Lägg till</button>
-          </div>
-        </div>
-      </fieldset>
-
-      <fieldset>
-   
-        
-        <legend>UTRÄKNING</legend>
-        <div class="calculatingContainer">
-          <div>
-            <label
-              >Inkommande:
-              <input id="calculateIncome" type="number" />
-            </label>
-
-            <button type="button" id="eraseIncomeBtn" class="btnStyle">
-              Radera
-            </button>
-          </div>
-
-          <div>
-            <label
-              >Utgående:
-              <input id="calculateExpense" type="number" />
-            </label>
-            <button type="button" id="eraseExpenseBtn" class="btnStyle">
-              Radera
-            </button>
-          </div>
-          <label
-            >TOTALT:
-            <input id="totalSum" type="number" />
-          </label>
-        </div>
-      </fieldset>
-    </form>
--->
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>
