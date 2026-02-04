@@ -72,3 +72,19 @@ eraseExpenseBtn.addEventListener("click", function () {
 
   calculateExpense.value = totalExpenseErase;
 });
+
+///Totalt///
+
+const totalSum = document.getElementById("totalSum"); // Hämta TOTALT-inputen från HTML
+// Detta är rutan där summan (inkomst - utgift) ska visas
+
+// Skapa en funktion som räknar totalen
+function updateTotal() {
+  // Räkna ut skillnaden mellan de totala inkomsterna och de totala utgifterna
+  // totalIncome och totalExpense är variabler som du uppdaterar när användaren klickar på knappar
+  const result = totalIncome - totalExpense;
+
+  // Sätt resultatet i TOTALT-rutan så användaren ser summan
+  totalSum.value = result;
+}
+//updateTotal är ett ord som jag själv väljer. I denna funktionen ska allt räknas ihop

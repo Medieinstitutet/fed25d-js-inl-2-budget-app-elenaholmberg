@@ -64,27 +64,12 @@ Event       | När?             |
 | `"keydown"` | Tangent trycks   |
 
 
-///-----------------------------------///
-///--------------UTRÄKNING------------///
-///-----------------------------------///
+💡 Förklaringar:
 
-///Inkommande///
-const calculateIncome = document.getElementById("calculateIncome"); //hämtar värdet från inputen i html
-const eraseIncomeBtn = document.getElementById("eraseIncomeBtn");
+document.getElementById("totalSum") → kopplar JS till HTML-elementet med id totalSum.
 
-eraseIncomeBtn.addEventListener("click", function () {
-  const value = Number(calculateIncome.value);
+function updateTotal() → skapar en egen funktion som gör uträkningen när vi vill.
 
-  calculateIncome.value = totalExpense;
-});
+const result = totalIncome - totalExpense → använder siffrorna vi sparat i minnet, inte HTML-elementen, och räknar skillnaden.
 
-///Utgående///
-
-const calculateExpense = document.getElementById("calculateExpense");
-const eraseExpenseBtn = document.getElementById("eraseExpenseBtn");
-
-eraseExpenseBtn.addEventListener("click", function () {
-  const value = Number(calculateExpense.value);
-
-  calculateExpense.value = totalExpense;
-});
+totalSum.value = result → visar resultatet i input-rutan på sidan.

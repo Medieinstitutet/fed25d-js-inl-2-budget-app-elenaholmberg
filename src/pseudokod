@@ -15,10 +15,16 @@ Du ska skapa en liten "budget-app". I appen ska det finnas med:
 [x] 1. Ett fält för att mata in en utgift (belopp och beskrivning), och samma för inkomst
  
 
-[] 2. Bredvid varje budgetpost ska det finnas en radera-knapp
+[x] 2. Bredvid varje budgetpost ska det finnas en radera-knapp
 
 
 [] Det ska visas en balans (inkomster minus utgifter)
+- Skapa en funktion som:
+tar totalIncome
+
+tar totalExpense
+
+sätter totalSum.value till skillnaden
 
 
 
