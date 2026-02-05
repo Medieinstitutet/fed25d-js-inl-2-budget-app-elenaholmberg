@@ -46,17 +46,61 @@ Du ska skapa en liten "budget-app". I appen ska det finnas med:
 
 
 
-## Flöde:
-
-1.
-
-[x]  Uppgift: lägg till ifylld siffra från input-fält Summa (id="incomeSum") genom att trycka på "Lägg till-knappen"
-(id="addIncomeBtn). Siffran ska då dyka upp i input-fält "Inkommande:" (id="calculateIncome")
-
-[x] . Uppgift: lägg till ifylld siffra från input-fält Summa  (id="expenseSum") genom att trycka på "Lägg till-knappen
-("id="addExpenseBtn"). Siffran ska då dyka upp i input-fält "Utgående:" (id="calculateExpense")
-
-2. 
-
-[] Uppgift: skapa radera-knapp i html. => hämta upp värdet i JS med querySelector => ge knappen en uppgift med addEventListener
-=> händelsen radera utförs med hjälp av en funktion.
+┌──────────────┐
+│    START     │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────────────────────┐
+│ Användaren väljer            │
+│ • Inkomst eller Utgift       │
+│ • Kategori i dropdown        │
+│ • Fyller i summa och text    │
+└──────┬───────────────────────┘
+       │
+       ▼
+┌──────────────────────────────┐
+│ Klick på knappen             │
+│ "Lägg till"                  │
+└──────┬───────────────────────┘
+       │
+       ▼
+┌──────────────────────────────┐
+│ Skapa nytt objekt            │
+│ med typ, kategori, summa     │
+│ och beskrivning              │
+└──────┬───────────────────────┘
+       │
+       ▼
+┌──────────────────────────────┐
+│ Lägg till objektet i         │
+│ arrayen transactions[]       │
+└──────┬───────────────────────┘
+       │
+       ▼
+┌──────────────────────────────┐
+│ Rensa formulärfält            │
+└──────┬───────────────────────┘
+       │
+       ▼
+┌──────────────────────────────┐
+│ Skriv ut hela listan igen    │
+│ (rött för utgift, grönt för  │
+│ inkomst)                     │
+└──────┬───────────────────────┘
+       │
+       ▼
+┌──────────────────────────────┐
+│ Summera alla poster i        │
+│ arrayen till en total        │
+└──────┬───────────────────────┘
+       │
+       ▼
+┌──────────────────────────────┐
+│ Visa total i totalfältet     │
+└──────┬───────────────────────┘
+       │
+       ▼
+┌──────────────┐
+│    KLAR      │
+└──────────────┘
