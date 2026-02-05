@@ -1,0 +1,23 @@
+{
+  "incomes": [
+    {
+      "text": "Lön",
+      "value": "Salary"
+    },
+
+    {
+      "text": "Studiebidrag",
+      "value": "CSN"
+    },
+
+    {
+      "text": "Bostadsbidrag",
+      "value": "Housing allowance"
+    },
+
+    {
+      "text": "Sparande",
+      "value": "Savings"
+    }
+  ]
+}
