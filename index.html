@@ -23,7 +23,7 @@
           <h2>INKOMSTER & UTGIFTER</h2>
         </legend>
 <!--Här väljer användaren kategori-->
-        <div class="cathegoryContainer">
+        
           <div class="incomeRadioBtn">
             <label>
               <input type="radio" id="chooseIncomeBtn" name="type" />
@@ -31,9 +31,10 @@
             </label>
 
 
- <select id="incomeDropdown">
+            <select id="incomeDropdown">
               <option value="" disabled selected>Välj kategori</option>
             </select>
+          </div>
 
 
           <div class="expenseRadioBtn">
@@ -47,36 +48,25 @@
             </select>
            
           </div>
-        </div>
+     
 
         <!--här fyller användaren i summa-->
 
-        <div class="inContainer">
+        <div id="inContainer" class="inContainer">
 
            <label>
-            Beskrivning:
-            <input type="number" id="sumIn" placeholder="ex. Lön/ Fika" />
+           Summa:
+            <input type="number" id="sumIn" placeholder="ex. 100/ -100" /> kr
           </label>
 
           <label>
-            Summa:
+            Beskrivning:
             <input type="text" id="descriptionIn" placeholder="ex. Lön / Fika" />
           </label>
         </div>
          
 
-         <div class="outContainer">
-
-           <label>
-            Beskrivning:
-            <input type="number" id="sumOut" placeholder="ex. Lön/ Fika" />
-          </label>
-
-          <label>
-            Summa:
-            <input type="text" id="descriptionOut" placeholder="ex. Lön / Fika" />
-          </label>
-        </div>
+         
 
           <button type="button" id="addBtn" class="addBtn">Lägg till</button>
        

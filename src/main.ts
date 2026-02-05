@@ -27,7 +27,7 @@ const dropdownExp =
 if (dropdownIn) dropdownIn.disabled = true;
 if (dropdownExp) dropdownExp.disabled = true;
 
-// När man klickar på inkomstdropdown
+// När man klickar på inkomst button => dropdown aktiveras
 incomeBtn?.addEventListener("click", () => {
   if (!dropdownIn || !dropdownExp) return;
 
@@ -35,7 +35,7 @@ incomeBtn?.addEventListener("click", () => {
   dropdownExp.disabled = true; // stäng utgiftsdropdown
 });
 
-// När man klickar på utgiftsdropdown
+// När man klickar på utgifts button => dropdown aktiveras
 expenseBtn?.addEventListener("click", () => {
   if (!dropdownIn || !dropdownExp) return;
 
