@@ -2,13 +2,15 @@ import "./style.css";
 
 import categories from "./categories.json";
 
+///---------------------------------------///
+///--------------FILTRERING---------------///
+///---------------------------------------///
 const catDropdown = document.querySelector("#categoryDropdown");
 if (catDropdown) {
-  categories.expenses.forEach((category) => {
+  categories.incomes.forEach((category) => {
     catDropdown.innerHTML += `<option value="${category.value}">${category.text}</option>`;
   });
 }
-
 ///----------------------------------------///
 ///-------------------IN-------------------///
 ///-----------------------------------------///
