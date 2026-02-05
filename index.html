@@ -17,12 +17,12 @@
     </header>
 
     <form>
-      <!--Ruta som användaren fyller i-->
+      
       <fieldset>
         <legend>
           <h2>INKOMSTER & UTGIFTER</h2>
         </legend>
-
+<!--Här väljer användaren kategori-->
         <div class="cathegoryContainer">
           <div class="incomeRadioBtn">
             <label>
@@ -49,23 +49,41 @@
           </div>
         </div>
 
-        <div class="inputContainer">
+        <!--här fyller användaren i summa-->
+
+        <div class="inContainer">
+
+           <label>
+            Beskrivning:
+            <input type="number" id="sumIn" placeholder="ex. Lön/ Fika" />
+          </label>
+
           <label>
             Summa:
-            <input type="text" id="outgoing" placeholder="ex. Lön / Fika" />
+            <input type="text" id="descriptionIn" placeholder="ex. Lön / Fika" />
+          </label>
+        </div>
+         
+
+         <div class="outContainer">
+
+           <label>
+            Beskrivning:
+            <input type="number" id="sumOut" placeholder="ex. Lön/ Fika" />
           </label>
 
           <label>
-            Beskrivning:
-            <input type="number" id="outgoing" placeholder="ex. Lön/ Fika" />
+            Summa:
+            <input type="text" id="descriptionOut" placeholder="ex. Lön / Fika" />
           </label>
+        </div>
 
           <button type="button" id="addBtn" class="addBtn">Lägg till</button>
-        </div>
+       
 
         
 
-      <span class="material-symbols-outlined"> payment_arrow_down </span>
+      
 
       <!------Resultat-rutan------->
       <fieldset>
