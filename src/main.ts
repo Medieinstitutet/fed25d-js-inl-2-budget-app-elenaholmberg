@@ -2,18 +2,6 @@ import "./style.css";
 
 import categories from "./categories.json";
 
-import inAndOutData from "./inAndOut.json";
-
-type Entry = {
-  type: "income" | "expense";
-  category: string;
-  sum: number;
-  description: string;
-};
-
-// Startarray med data från JSON
-const entries: Entry[] = inAndOutData;
-
 ///---------------------------------------///
 ///--------------INKOMST------------------///
 ///---------------------------------------///
@@ -54,5 +42,3 @@ expenseBtn?.addEventListener("click", () => {
   dropdownExp.disabled = false; // aktivera utgiftsdropdown
   dropdownIn.disabled = true; // stäng inkomstdropdown
 });
-
-///-----för över information till räknaren-----///
