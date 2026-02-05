@@ -59,6 +59,6 @@
 
 
 
-1. klick på inkomst => knapp hämtas => tilldelas ett event => vid event kopplas diven på.
-2. <div class="inContainer"> visas =>
-3. 
+User fyller i <div id="inContainer"> => 
+1. all information samlas i en array =>
+2. arrayen visas i  <div id="inArray">
