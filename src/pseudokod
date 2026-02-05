@@ -1,106 +1,58 @@
-# Generellt
-
-[] All information ska presenteras på en och samma sida.
-[] Applikationen ska vara responsiv, men du behöver inte göra värsta fina sidan med CSS.
-[x] Du har initierat projektet med Vite och TypeScript.
-[x] Du har använt någon form av linter, t.ex. ESLint/Prettier eller Biome/Oxlint och den är installerad som en dependency i projektet, samt du har skapat en konfigurationsfil som finns med i repot.
-[x] Sidan ska vara publicerad på GitHub Pages.
-
-# Vecka 1 (2-6 februari) - Grundläggande JavaScript, repetition
-
-
-
-Du ska skapa en liten "budget-app". I appen ska det finnas med:
-
-[x] 1. Ett fält för att mata in en utgift (belopp och beskrivning), och samma för inkomst
- 
-
-[x] 2. Bredvid varje budgetpost ska det finnas en radera-knapp
-
-
-[x] Det ska visas en balans (inkomster minus utgifter)
-
-
-
-
-[] Balansens ska färgkodas beroende på om det är ett positivt eller negativt värde
-
-
-
-[] Balansen ska uppdateras varje gång en ny utgift eller inkomst matas in
-
-
-
-[] Till varje budgetpost ska det gå att välja en kategori från en dropdown-lista (select)
-
-
-
-[] Informationen ska sparas i local storage så att när användaren kommer till sidan nästa gång, så ska informationen finnas kvar. Nytt
-
-
-
-[] Kategorierna ska läsas in via JSON. Vi går igenom detta på lektionen. Nytt
-
-
-
-
-
-
 ┌──────────────┐
 │    START     │
 └──────┬───────┘
-       │
-       ▼
+│
+▼
 ┌──────────────────────────────┐
 │ Användaren väljer            │
 │ • Inkomst eller Utgift       │
 │ • Kategori i dropdown        │
 │ • Fyller i summa och text    │
 └──────┬───────────────────────┘
-       │
-       ▼
+│
+▼
 ┌──────────────────────────────┐
 │ Klick på knappen             │
 │ "Lägg till"                  │
 └──────┬───────────────────────┘
-       │
-       ▼
+│
+▼
 ┌──────────────────────────────┐
 │ Skapa nytt objekt            │
 │ med typ, kategori, summa     │
 │ och beskrivning              │
 └──────┬───────────────────────┘
-       │
-       ▼
+│
+▼
 ┌──────────────────────────────┐
 │ Lägg till objektet i         │
 │ arrayen transactions[]       │
 └──────┬───────────────────────┘
-       │
-       ▼
+│
+▼
 ┌──────────────────────────────┐
 │ Rensa formulärfält            │
 └──────┬───────────────────────┘
-       │
-       ▼
+│
+▼
 ┌──────────────────────────────┐
 │ Skriv ut hela listan igen    │
 │ (rött för utgift, grönt för  │
 │ inkomst)                     │
 └──────┬───────────────────────┘
-       │
-       ▼
+│
+▼
 ┌──────────────────────────────┐
 │ Summera alla poster i        │
 │ arrayen till en total        │
 └──────┬───────────────────────┘
-       │
-       ▼
+│
+▼
 ┌──────────────────────────────┐
 │ Visa total i totalfältet     │
 └──────┬───────────────────────┘
-       │
-       ▼
+│
+▼
 ┌──────────────┐
 │    KLAR      │
 └──────────────┘

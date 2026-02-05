@@ -26,28 +26,28 @@
         <div class="cathegoryContainer">
           <div class="incomeRadioBtn">
             <label>
-              <input type="radio" id="chooseIncomeBtn" />
+              <input type="radio" id="chooseIncomeBtn" name="type" />
               INKOMST
             </label>
 
             <select id="incomesCathegory">
-              <option value="Glazed">Lön</option>
-              <option value="Sprinkled">Studiebidrag</option>
-              <option value="Classic">Bostadsbidrag</option>
+              <option value="Salary">Lön</option>
+              <option value="CSN">Studiebidrag</option>
+              <option value="housingAllowance">Bostadsbidrag</option>
               <option value="All">Övrigt</option>
             </select>
           </div>
 
           <div class="expenseRadioBtn">
             <label>
-              <input type="radio" id="chooseExpenseBtn" />
+              <input type="radio" id="chooseExpenseBtn" name="type" />
               UTGIFT
             </label>
             <select id="expensesCathegory">
-              <option value="Glazed">Hushåll</option>
-              <option value="Sprinkled">Nöjen</option>
-              <option value="Classic">Rörliga kostnader</option>
-              <option value="All">Övrigt</option>
+              <option value="Household">Hushåll</option>
+              <option value="Entertainment">Nöjen</option>
+              <option value="variableCosts">Rörliga kostnader</option>
+              <option value="Other">Övrigt</option>
             </select>
           </div>
         </div>
@@ -55,7 +55,7 @@
         <div class="inputContainer">
           <label>
             Summa:
-            <input type="number" id="incoming" placeholder="+ / -100" />
+            <input type="text" id="outgoing" placeholder="ex. Lön / Fika" />
           </label>
 
           <label>
@@ -88,6 +88,6 @@
       </fieldset>
     </form>
 
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/main.ts"></script>
   </body>
 </html>
