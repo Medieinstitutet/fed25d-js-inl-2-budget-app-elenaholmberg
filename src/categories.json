@@ -19,5 +19,27 @@
       "text": "Sparande",
       "value": "Savings"
     }
+  ],
+
+  "expenses": [
+    {
+      "text": "Hushåll",
+      "value": "Household"
+    },
+
+    {
+      "text": "Nöjen",
+      "value": "Entertainment"
+    },
+
+    {
+      "text": "Rörliga kostnader",
+      "value": "Variable Costs"
+    },
+
+    {
+      "text": "Övrigt",
+      "value": "Other"
+    }
   ]
 }

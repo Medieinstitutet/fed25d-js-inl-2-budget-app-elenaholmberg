@@ -5,12 +5,20 @@ import categories from "./categories.json";
 ///---------------------------------------///
 ///--------------FILTRERING---------------///
 ///---------------------------------------///
-const catDropdown = document.querySelector("#categoryDropdown");
-if (catDropdown) {
+const incomeDropdown = document.querySelector("#incomeDropdown");
+if (incomeDropdown) {
   categories.incomes.forEach((category) => {
-    catDropdown.innerHTML += `<option value="${category.value}">${category.text}</option>`;
+    incomeDropdown.innerHTML += `<option value="${category.value}">${category.text}</option>`;
   });
 }
+
+const expensesDropdown = document.querySelector("#expensesDropdown");
+if (expensesDropdown) {
+  categories.expenses.forEach((category) => {
+    expensesDropdown.innerHTML += `<option value="${category.value}">${category.text}</option>`;
+  });
+}
+
 ///----------------------------------------///
 ///-------------------IN-------------------///
 ///-----------------------------------------///
