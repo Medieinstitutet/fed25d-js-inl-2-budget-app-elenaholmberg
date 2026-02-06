@@ -1,64 +1,61 @@
-┌──────────────┐
-│    START     │
-└──────┬───────┘
-│
-▼
-┌──────────────────────────────┐
-│ Användaren väljer            │
-│ • Inkomst eller Utgift       │
-│ • Kategori i dropdown        │
-│ • Fyller i summa och text    │
-└──────┬───────────────────────┘
-│
-▼
-┌──────────────────────────────┐
-│ Klick på knappen             │
-│ "Lägg till"                  │
-└──────┬───────────────────────┘
-│
-▼
-┌──────────────────────────────┐
-│ Skapa nytt objekt            │
-│ med typ, kategori, summa     │
-│ och beskrivning              │
-└──────┬───────────────────────┘
-│
-▼
-┌──────────────────────────────┐
-│ Lägg till objektet i         │
-│ arrayen transactions[]       │
-└──────┬───────────────────────┘
-│
-▼
-┌──────────────────────────────┐
-│ Rensa formulärfält            │
-└──────┬───────────────────────┘
-│
-▼
-┌──────────────────────────────┐
-│ Skriv ut hela listan igen    │
-│ (rött för utgift, grönt för  │
-│ inkomst)                     │
-└──────┬───────────────────────┘
-│
-▼
-┌──────────────────────────────┐
-│ Summera alla poster i        │
-│ arrayen till en total        │
-└──────┬───────────────────────┘
-│
-▼
-┌──────────────────────────────┐
-│ Visa total i totalfältet     │
-└──────┬───────────────────────┘
-│
-▼
-┌──────────────┐
-│    KLAR      │
-└──────────────┘
+## Pseudokod för Budget App
 
+### Ladda kategorier
+- Fyll `inkomst-dropdown` med inkomster från JSON
+- Fyll `utgift-dropdown` med utgifter från JSON
 
+### Sätt dropdowns som inaktiva
+- `inkomst-dropdown` = inaktiv
+- `utgift-dropdown` = inaktiv
 
-User fyller i <div id="inContainer"> => 
-1. all information samlas i en array =>
-2. arrayen visas i  <div id="inArray">
+### Lyssna på radiobuttons
+- Om användaren väljer **inkomst**:
+  - Aktivera `inkomst-dropdown`
+  - Inaktivera `utgift-dropdown`
+- Om användaren väljer **utgift**:
+  - Aktivera `utgift-dropdown`
+  - Inaktivera `inkomst-dropdown`
+
+### Skapa arrayer för poster
+- `incomeEntries` = tom array
+- `expenseEntries` = tom array
+
+### När användaren klickar på “Lägg till”
+- Hämta värden från:
+  - `amountInput` → belopp
+  - `descriptionInput` → beskrivning
+  - `dropdown` → kategori
+- Kontrollera att alla fält är ifyllda
+  - Om något saknas → visa alert “Fyll i alla fält”
+- Skapa ett entry-objekt med typ, kategori, belopp, beskrivning
+- Lägg till entry i rätt array:
+  - Om typ = inkomst → lägg till i `incomeEntries`
+  - Om typ = utgift → lägg till i `expenseEntries`
+- Rensa formulär-fälten
+
+### Rita om listorna (`renderEntries`)
+- Töm `incomeDiv` och `expenseDiv`
+- För varje entry i `incomeEntries`:
+  - Skapa en rad med kategori, belopp, beskrivning
+  - Färg: **grön**
+  - Lägg till **ta-bort-knapp**
+  - Om knappen klickas → ta bort entry från array och rita om
+- För varje entry i `expenseEntries`:
+  - Skapa en rad med kategori, belopp, beskrivning
+  - Färg: **röd**
+  - Lägg till **ta-bort-knapp**
+  - Om knappen klickas → ta bort entry från array och rita om
+
+### Räkna totalsummor
+- `totalIncome` = summera alla inkomster
+- `totalExpense` = summera alla utgifter
+- `saldo` = totalIncome - totalExpense
+
+### Visa totalsummor i `resultDiv`
+- Skriv ut:
+  - Inkomster: totalIncome
+  - Utgifter: totalExpense
+  - Saldo: saldo
+- Färg på saldo:
+  - Grönt om positivt
+  - Rött om negativt
