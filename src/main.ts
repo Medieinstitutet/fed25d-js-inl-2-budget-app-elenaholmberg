@@ -1,97 +1,107 @@
 import "./style.css";
-
 import categories from "./categories.json";
 
-///---------------------------------------///
-///--------------FILTRERING---------------///
-///---------------------------------------///
-const incomeDropdown = document.querySelector("#incomeDropdown");
+///-------------------- FILTRERING --------------------///
+const incomeDropdown = document.getElementById(
+  "incomeDropdown",
+) as HTMLSelectElement;
+const expensesDropdown = document.getElementById(
+  "expensesDropdown",
+) as HTMLSelectElement;
+
 if (incomeDropdown) {
   categories.incomes.forEach((category) => {
-    incomeDropdown.innerHTML += `<option value="${category.value}">${category.text}</option>`;
+    const option = document.createElement("option");
+    option.value = category.value;
+    option.textContent = category.text;
+    incomeDropdown.appendChild(option);
   });
 }
 
-const expensesDropdown = document.querySelector("#expensesDropdown");
 if (expensesDropdown) {
   categories.expenses.forEach((category) => {
-    expensesDropdown.innerHTML += `<option value="${category.value}">${category.text}</option>`;
+    const option = document.createElement("option");
+    option.value = category.value;
+    option.textContent = category.text;
+    expensesDropdown.appendChild(option);
   });
 }
 
-///----------------------------------------///
-///---------AKTIVERING MED RADIOBTNS-------///
-///-----------------------------------------///
+///-------------------- RADIOBUTTON LOGIK --------------------///
+const chooseIncomeBtn = document.getElementById(
+  "chooseIncomeBtn",
+) as HTMLInputElement;
+const chooseExpenseBtn = document.getElementById(
+  "chooseExpenseBtn",
+) as HTMLInputElement;
 
-const chooseIncomeBtn = document.getElementById("chooseIncomeBtn"); //Inkomst radio-button
-
-// Alla dropdowns disabled från början
 if (incomeDropdown) incomeDropdown.disabled = true;
 if (expensesDropdown) expensesDropdown.disabled = true;
 
-//Radiobuttons låses upp en i taget
-
 chooseIncomeBtn?.addEventListener("change", () => {
   if (!incomeDropdown || !expensesDropdown) return;
-
   incomeDropdown.disabled = false;
   expensesDropdown.disabled = true;
   expensesDropdown.selectedIndex = 0;
-
-  chooseExpenseBtn.disabled = false;
 });
 
 chooseExpenseBtn?.addEventListener("change", () => {
   if (!incomeDropdown || !expensesDropdown) return;
-
   expensesDropdown.disabled = false;
   incomeDropdown.disabled = true;
   incomeDropdown.selectedIndex = 0;
-
-  chooseIncomeBtn.disabled = false;
 });
 
-///-----------------------------------------///
-///---------RESULTAT FIELDSET---------------///
-///-----------------------------------------///
+///-------------------- ARRAYER --------------------///
+const incomeEntries: {
+  type: string;
+  category: string;
+  amount: number;
+  description: string;
+}[] = [];
+const expenseEntries: {
+  type: string;
+  category: string;
+  amount: number;
+  description: string;
+}[] = [];
 
-///-----------inkomst-array------------------///
-const incomeEntries = [];
+const amountInput = document.getElementById("amountInput") as HTMLInputElement;
+const descriptionInput = document.getElementById(
+  "descriptionInput",
+) as HTMLInputElement;
+const addBtn = document.getElementById("addBtn") as HTMLButtonElement;
 
-const amountInput = document.getElementById("amountInput"); //här skriver användaren sitt tal
-const descriptionInput = document.getElementById("descriptionInput"); //här skriver användaren beskrivningen
-const addBtn = document.getElementById("addBtn"); //hämtar knappen "Lägg till"
+const incomeDiv = document.getElementById("incomeEntries") as HTMLDivElement;
+const expenseDiv = document.getElementById("outgoingEntries") as HTMLDivElement;
 
-addBtn.addEventListener("click", () => {
+///-------------------- LÄGG TILL POST --------------------///
+addBtn?.addEventListener("click", () => {
   const amount = Number(amountInput.value);
   const description = descriptionInput.value.trim();
 
   let type = "";
   let category = "";
 
-  if (chooseIncomeBtn.checked) {
+  if (chooseIncomeBtn?.checked) {
     type = "inkomst";
     category = incomeDropdown.options[incomeDropdown.selectedIndex].text;
   }
 
-  if (chooseExpenseBtn.checked) {
+  if (chooseExpenseBtn?.checked) {
     type = "utgift";
     category = expensesDropdown.options[expensesDropdown.selectedIndex].text;
   }
 
   if (!type || !category || !description || isNaN(amount) || amount === 0) {
-    alert("Fyll i alla fält");
+    alert("Fyll i alla fält!");
     return;
   }
 
-  const entry = {
-    type,
-    category,
-    amount,
-    description,
-  };
+  const entry = { type, category, amount, description };
 
-  incomeEntries.push(entry);
+  if (type === "inkomst") incomeEntries.push(entry);
+  if (type === "utgift") expenseEntries.push(entry);
 
   renderEntries();
 
@@ -102,22 +112,47 @@ addBtn.addEventListener("click", () => {
   expensesDropdown.selectedIndex = 0;
 });
 
-const entriesDiv = document.getElementById("incomeEntries");
-
+///-------------------- RENDER FUNKTION --------------------///
 function renderEntries() {
-  entriesDiv.innerHTML = "";
+  // Töm divarna
+  incomeDiv.innerHTML = "<h3>INKOMSTER</h3>";
+  expenseDiv.innerHTML = "<h3>UTGIFTER</h3>";
 
-  incomeEntries.forEach((item) => {
+  // Rendera inkomster
+  incomeEntries.forEach((item, index) => {
     const row = document.createElement("div");
     row.classList.add("entry");
 
     row.innerHTML = `
-      <strong>${item.type.toUpperCase()}</strong> |
-      ${item.category} |
-      ${item.amount} kr |
-      ${item.description}
+      ${item.category} | ${item.amount} kr | ${item.description}
+      <button class="deleteBtn">Ta bort</button>
     `;
 
-    entriesDiv.appendChild(row);
+    const btn = row.querySelector(".deleteBtn") as HTMLButtonElement;
+    btn.addEventListener("click", () => {
+      incomeEntries.splice(index, 1); // ta bort posten från arrayen
+      renderEntries(); // rendera om
+    });
+
+    incomeDiv.appendChild(row);
+  });
+
+  // Rendera utgifter
+  expenseEntries.forEach((item, index) => {
+    const row = document.createElement("div");
+    row.classList.add("entry");
+
+    row.innerHTML = `
+      ${item.category} | ${item.amount} kr | ${item.description}
+      <button class="deleteBtn">Ta bort</button>
+    `;
+
+    const btn = row.querySelector(".deleteBtn") as HTMLButtonElement;
+    btn.addEventListener("click", () => {
+      expenseEntries.splice(index, 1);
+      renderEntries();
+    });
+
+    expenseDiv.appendChild(row);
   });
 }
