@@ -11,17 +11,7 @@
   color: red;
 }
 
-.pickIncome,
-.pickExpense {
-  padding: 20px;
-}
-
-.inputContainer {
-  padding: 20px;
-}
-
 .addBtn {
-  margin: 20px;
 }
 
 .firstFieldset,
@@ -31,5 +21,25 @@
 
 .gridBox {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  gap: 1rem;
+}
+
+.pickIncome {
+  grid-column: 1 / 3;
+}
+
+.pickExpense {
+  grid-column: 3 / 9;
+}
+
+.inputContainer {
+  padding: 20px;
+  background-color: bisque;
+}
+
+.gridAmount,
+.gridDesc {
+  display: flex;
+  padding-bottom: 20px;
 }
