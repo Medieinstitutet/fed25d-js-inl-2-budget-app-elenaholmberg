@@ -56,12 +56,12 @@
 
            <label>
            Summa:
-            <input type="number" id="sumIn" placeholder="ex. 100/ -100" /> kr
+            <input type="number" id="amountInput" placeholder="ex. 100/ -100" /> kr
           </label>
 
           <label>
             Beskrivning:
-            <input type="text" id="descriptionIn" placeholder="ex. Lön / Fika" />
+            <input type="text" id="descriptionInput" placeholder="ex. Lön / Fika" />
           </label>
         </div>
          
@@ -79,16 +79,13 @@
       <fieldset>
         <legend>RESULTAT</legend>
 
-        <div class="allArray">Inkomst:</div>
+      
+        <div id="incomeEntries"></div>
 
-        <div class="allArray">Utgifter:</div>
 
-        <div class="resultInput">
-          <label class="resultLabel">
-            BALANS:
-            <input type="number" />
-          </label>
-        </div>
+
+         <div id="outgoingEntries"></div>
+
       </fieldset>
     </form>
 
