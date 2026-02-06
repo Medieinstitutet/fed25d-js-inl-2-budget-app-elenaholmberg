@@ -118,10 +118,17 @@ function renderEntries() {
   incomeDiv.innerHTML = "<h3>INKOMSTER</h3>";
   expenseDiv.innerHTML = "<h3>UTGIFTER</h3>";
 
+  // Totalsummor
+  let totalIncome = 0;
+  let totalExpense = 0;
+
   // Rendera inkomster
   incomeEntries.forEach((item, index) => {
+    totalIncome += item.amount;
+
     const row = document.createElement("div");
     row.classList.add("entry");
+    row.style.color = "green"; // inkomster gröna
 
     row.innerHTML = `
       ${item.category} | ${item.amount} kr | ${item.description}
@@ -130,8 +137,8 @@ function renderEntries() {
 
     const btn = row.querySelector(".deleteBtn") as HTMLButtonElement;
     btn.addEventListener("click", () => {
-      incomeEntries.splice(index, 1); // ta bort posten från arrayen
-      renderEntries(); // rendera om
+      incomeEntries.splice(index, 1);
+      renderEntries();
     });
 
     incomeDiv.appendChild(row);
@@ -139,8 +146,11 @@ function renderEntries() {
 
   // Rendera utgifter
   expenseEntries.forEach((item, index) => {
+    totalExpense += item.amount;
+
     const row = document.createElement("div");
     row.classList.add("entry");
+    row.style.color = "red"; // utgifter röda
 
     row.innerHTML = `
       ${item.category} | ${item.amount} kr | ${item.description}
@@ -155,4 +165,22 @@ function renderEntries() {
 
     expenseDiv.appendChild(row);
   });
+
+  // Visa totalsumma med färg på saldo
+  if (resultDiv) {
+    const saldo = totalIncome - totalExpense;
+    resultDiv.innerHTML = `
+      <h3>TOTALER</h3>
+      <p>Inkomster: ${totalIncome} kr</p>
+      <p>Utgifter: ${totalExpense} kr</p>
+      <p>Saldo: <span id="saldoValue">${saldo} kr</span></p>
+    `;
+
+    const saldoSpan = document.getElementById("saldoValue") as HTMLSpanElement;
+    if (saldo >= 0) {
+      saldoSpan.style.color = "green";
+    } else {
+      saldoSpan.style.color = "red";
+    }
+  }
 }
