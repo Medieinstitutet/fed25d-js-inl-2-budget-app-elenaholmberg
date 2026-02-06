@@ -1,43 +1,12 @@
-/*
-.incomeAndExpense,
-.calculatingContainer {
+.entriesContainer,
+.inOutEntries {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
 }
 
-.incomeContainer,
-.expenseContainer {
-  display: flex;
-  justify-content: space-between;
+.green {
+  color: green;
 }
 
-/*BUTTONS
-.btnStyle {
-  width: 70px;
-  margin-left: 20px;
-}*/
-
-.inputContainer {
-  background-color: bisque;
-  padding: 40px;
-}
-
-.cathegoryContainer,
-.expenseRadioBtn,
-.incomeRadioBtn {
-  background-color: burlywood;
-  padding: 20px;
-}
-
-.addBtn {
-  margin: 60px;
-}
-
-/*resultatrutan*/
-.allArray {
-  background-color: cadetblue;
-  height: 100px;
-  margin-bottom: 20px;
+.red {
+  color: red;
 }

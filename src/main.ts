@@ -155,7 +155,7 @@ function renderEntries() {
 
     row.innerHTML = `
       ${item.category} | ${item.amount} kr | ${item.description}
-      <button class="deleteBtn">Ta bort</button>
+      <button class="deleteBtn">X</button>
     `;
 
     const btn = row.querySelector(".deleteBtn") as HTMLButtonElement;
@@ -171,9 +171,12 @@ function renderEntries() {
   if (resultDiv) {
     const saldo = totalIncome - totalExpense;
     resultDiv.innerHTML = `
+      
+      <div class="inOutEntries">
+      <p class="green">Inkomster: ${totalIncome} kr</p>
+      <p class="red">Utgifter: ${totalExpense} kr</p>
+      </div>
       <h3>TOTALER</h3>
-      <p>Inkomster: ${totalIncome} kr</p>
-      <p>Utgifter: ${totalExpense} kr</p>
       <p>Saldo: <span id="saldoValue">${saldo} kr</span></p>
     `;
 
