@@ -38,20 +38,6 @@ const chooseExpenseBtn = document.getElementById(
 if (incomeDropdown) incomeDropdown.disabled = true;
 if (expensesDropdown) expensesDropdown.disabled = true;
 
-chooseIncomeBtn?.addEventListener("change", () => {
-  if (!incomeDropdown || !expensesDropdown) return;
-  incomeDropdown.disabled = false;
-  expensesDropdown.disabled = true;
-  expensesDropdown.selectedIndex = 0;
-});
-
-chooseExpenseBtn?.addEventListener("change", () => {
-  if (!incomeDropdown || !expensesDropdown) return;
-  expensesDropdown.disabled = false;
-  incomeDropdown.disabled = true;
-  incomeDropdown.selectedIndex = 0;
-});
-
 ///-------------------- ARRAYER --------------------///
 const incomeEntries: {
   type: string;
@@ -76,6 +62,51 @@ const incomeDiv = document.getElementById("incomeEntries") as HTMLDivElement;
 const expenseDiv = document.getElementById("outgoingEntries") as HTMLDivElement;
 const resultDiv = document.getElementById("resultEntrie") as HTMLDivElement;
 
+// Knappen inaktiverad från början
+addBtn.disabled = true;
+
+///-------------------- FORM VALIDITY CHECK --------------------///
+function checkFormValidity() {
+  let typeSelected = chooseIncomeBtn.checked || chooseExpenseBtn.checked;
+  let categorySelected = false;
+
+  if (chooseIncomeBtn.checked) {
+    categorySelected = incomeDropdown.selectedIndex > 0;
+  } else if (chooseExpenseBtn.checked) {
+    categorySelected = expensesDropdown.selectedIndex > 0;
+  }
+
+  let amountFilled = amountInput.value.trim() !== "";
+  let descriptionFilled = descriptionInput.value.trim() !== "";
+
+  addBtn.disabled = !(
+    typeSelected &&
+    categorySelected &&
+    amountFilled &&
+    descriptionFilled
+  );
+}
+
+///-------------------- EVENTLISTENERS --------------------///
+chooseIncomeBtn.addEventListener("change", () => {
+  incomeDropdown.disabled = false;
+  expensesDropdown.disabled = true;
+  expensesDropdown.selectedIndex = 0;
+  checkFormValidity();
+});
+
+chooseExpenseBtn.addEventListener("change", () => {
+  expensesDropdown.disabled = false;
+  incomeDropdown.disabled = true;
+  incomeDropdown.selectedIndex = 0;
+  checkFormValidity();
+});
+
+incomeDropdown.addEventListener("change", checkFormValidity);
+expensesDropdown.addEventListener("change", checkFormValidity);
+amountInput.addEventListener("input", checkFormValidity);
+descriptionInput.addEventListener("input", checkFormValidity);
+
 ///-------------------- LÄGG TILL POST --------------------///
 addBtn?.addEventListener("click", () => {
   const amount = Number(amountInput.value);
@@ -84,12 +115,12 @@ addBtn?.addEventListener("click", () => {
   let type = "";
   let category = "";
 
-  if (chooseIncomeBtn?.checked) {
+  if (chooseIncomeBtn.checked) {
     type = "inkomst";
     category = incomeDropdown.options[incomeDropdown.selectedIndex].text;
   }
 
-  if (chooseExpenseBtn?.checked) {
+  if (chooseExpenseBtn.checked) {
     type = "utgift";
     category = expensesDropdown.options[expensesDropdown.selectedIndex].text;
   }
@@ -111,6 +142,9 @@ addBtn?.addEventListener("click", () => {
   descriptionInput.value = "";
   incomeDropdown.selectedIndex = 0;
   expensesDropdown.selectedIndex = 0;
+
+  // Kolla om knappen ska stängas av igen
+  checkFormValidity();
 });
 
 ///-------------------- RENDER FUNKTION --------------------///
@@ -129,11 +163,11 @@ function renderEntries() {
 
     const row = document.createElement("div");
     row.classList.add("entry");
-    row.style.color = "green"; // inkomster gröna
+    row.style.color = "green";
 
     row.innerHTML = `
       ${item.category} | ${item.amount} kr | ${item.description}
-      <button class="deleteBtn">Ta bort</button>
+      <button class="deleteBtn">x</button>
     `;
 
     const btn = row.querySelector(".deleteBtn") as HTMLButtonElement;
@@ -151,11 +185,11 @@ function renderEntries() {
 
     const row = document.createElement("div");
     row.classList.add("entry");
-    row.style.color = "red"; // utgifter röda
+    row.style.color = "red";
 
     row.innerHTML = `
       ${item.category} | ${item.amount} kr | ${item.description}
-      <button class="deleteBtn">X</button>
+      <button class="deleteBtn">x</button>
     `;
 
     const btn = row.querySelector(".deleteBtn") as HTMLButtonElement;
@@ -171,12 +205,11 @@ function renderEntries() {
   if (resultDiv) {
     const saldo = totalIncome - totalExpense;
     resultDiv.innerHTML = `
-      
       <div class="inOutEntries">
-      <p class="green">Inkomster: ${totalIncome} kr</p>
-      <p class="red">Utgifter: ${totalExpense} kr</p>
+        <p class="green">Inkomster: ${totalIncome} kr</p>
+        <p class="red">Utgifter: ${totalExpense} kr</p>
       </div>
-      <h3>TOTALER</h3>
+      <h3>TOTALT</h3>
       <p>Saldo: <span id="saldoValue">${saldo} kr</span></p>
     `;
 

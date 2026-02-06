@@ -10,3 +10,21 @@
 .red {
   color: red;
 }
+
+.pickIncome,
+.pickExpense {
+  padding: 20px;
+}
+
+.inputContainer {
+  padding: 20px;
+}
+
+.addBtn {
+  margin: 20px;
+}
+
+.firstFieldset,
+.secondFieldset {
+  background-color: floralwhite;
+}

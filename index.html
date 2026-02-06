@@ -17,79 +17,68 @@
     </header>
 
     <form>
-      
-      <fieldset>
+      <fieldset class="firstFieldset">
         <legend>
           <h2>INKOMSTER & UTGIFTER</h2>
         </legend>
-<!--Här väljer användaren kategori-->
-        
-          <div class="incomeRadioBtn">
-            <label>
-              <input type="radio" id="chooseIncomeBtn" name="type" />
-              INKOMST
-            </label>
+        <!--Här väljer användaren kategori-->
+        <div></div>
+        <div class="pickIncome">
+          <label>
+            <input type="radio" id="chooseIncomeBtn" name="type" />
+            INKOMST
+          </label>
 
+          <select id="incomeDropdown">
+            <option value="" disabled selected>Välj kategori</option>
+          </select>
+        </div>
 
-            <select id="incomeDropdown">
-              <option value="" disabled selected>Välj kategori</option>
-            </select>
-          </div>
+        <div class="pickExpense">
+          <label>
+            <input type="radio" id="chooseExpenseBtn" name="type" />
+            UTGIFT
+          </label>
 
-
-          <div class="expenseRadioBtn">
-            <label>
-              <input type="radio" id="chooseExpenseBtn" name="type" />
-              UTGIFT
-            </label>
-
-            <select id="expensesDropdown">
-              <option value="" disabled selected>Välj kategori</option>
-            </select>
-           
-          </div>
-     
+          <select id="expensesDropdown">
+            <option value="" disabled selected>Välj kategori</option>
+          </select>
+        </div>
 
         <!--här fyller användaren i summa-->
 
-        <div id="inContainer" class="inContainer">
-
-           <label>
-           Summa:
-            <input type="number" id="amountInput" placeholder="ex. 100/ -100" /> kr
+        <div class="inputContainer">
+          <label>
+            Summa:
+            <input type="number" id="amountInput" placeholder="ex. 100/ -100" />
+            kr
           </label>
 
           <label>
             Beskrivning:
-            <input type="text" id="descriptionInput" placeholder="ex. Lön / Fika" />
+            <input
+              type="text"
+              id="descriptionInput"
+              placeholder="ex. Lön / Fika"
+            />
           </label>
         </div>
-         
 
-         
-
-          <button type="button" id="addBtn" class="addBtn">Lägg till</button>
-       
-
-        
-
-      
+        <button type="button" id="addBtn" class="addBtn">Lägg till</button>
+      </fieldset>
 
       <!------Resultat-rutan------->
-      <fieldset>
-        <legend>RESULTAT</legend>
+      <fieldset class="secondFieldset">
+        <legend><h2>RESULTAT</h2></legend>
 
-      
-        <div class="entriesContainer">
-          <div id="incomeEntries"></div>
-
-          <div id="outgoingEntries"></div>
-        </div>
+        
+          <div class="entriesContainer">
+            <div id="incomeEntries"></div>
+            <div id="outgoingEntries"></div>
+          </div>
 
           <div id="resultEntrie"></div>
-        
-
-
+        </section>
       </fieldset>
     </form>
 
