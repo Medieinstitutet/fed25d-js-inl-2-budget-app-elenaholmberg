@@ -22,28 +22,29 @@
           <h2>INKOMSTER & UTGIFTER</h2>
         </legend>
         <!--Här väljer användaren kategori-->
-        <div></div>
-        <div class="pickIncome">
-          <label>
-            <input type="radio" id="chooseIncomeBtn" name="type" />
-            INKOMST
-          </label>
+        <div class="gridBox">
+          <div class="pickIncome">
+            <label>
+              <input type="radio" id="chooseIncomeBtn" name="type" />
+              INKOMST
+            </label>
 
-          <select id="incomeDropdown">
-            <option value="" disabled selected>Välj kategori</option>
-          </select>
-        </div>
+            <select id="incomeDropdown">
+              <option value="" disabled selected>Välj kategori</option>
+            </select>
+          </div>
 
-        <div class="pickExpense">
-          <label>
-            <input type="radio" id="chooseExpenseBtn" name="type" />
-            UTGIFT
-          </label>
+          <div class="pickExpense">
+            <label>
+              <input type="radio" id="chooseExpenseBtn" name="type" />
+              UTGIFT
+            </label>
 
-          <select id="expensesDropdown">
-            <option value="" disabled selected>Välj kategori</option>
-          </select>
-        </div>
+            <select id="expensesDropdown">
+              <option value="" disabled selected>Välj kategori</option>
+            </select>
+          </div>
+        
 
         <!--här fyller användaren i summa-->
 
@@ -65,13 +66,14 @@
         </div>
 
         <button type="button" id="addBtn" class="addBtn">Lägg till</button>
+        </div>
       </fieldset>
 
       <!------Resultat-rutan------->
       <fieldset class="secondFieldset">
         <legend><h2>RESULTAT</h2></legend>
 
-        
+        <div class="">
           <div class="entriesContainer">
             <div id="incomeEntries"></div>
             <div id="outgoingEntries"></div>
@@ -79,6 +81,7 @@
 
           <div id="resultEntrie"></div>
         </section>
+        </div>
       </fieldset>
     </form>
 
