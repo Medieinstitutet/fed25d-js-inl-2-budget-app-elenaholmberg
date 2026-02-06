@@ -74,6 +74,7 @@ const addBtn = document.getElementById("addBtn") as HTMLButtonElement;
 
 const incomeDiv = document.getElementById("incomeEntries") as HTMLDivElement;
 const expenseDiv = document.getElementById("outgoingEntries") as HTMLDivElement;
+const resultDiv = document.getElementById("resultEntrie") as HTMLDivElement;
 
 ///-------------------- LÄGG TILL POST --------------------///
 addBtn?.addEventListener("click", () => {
@@ -177,10 +178,6 @@ function renderEntries() {
     `;
 
     const saldoSpan = document.getElementById("saldoValue") as HTMLSpanElement;
-    if (saldo >= 0) {
-      saldoSpan.style.color = "green";
-    } else {
-      saldoSpan.style.color = "red";
-    }
+    saldoSpan.style.color = saldo >= 0 ? "green" : "red";
   }
 }
