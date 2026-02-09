@@ -1,29 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/fEntiP9j)
+Validering Css
+<img width="677" height="579" alt="Skärmavbild 2026-02-09 kl  09 50 03" src="https://github.com/user-attachments/assets/48b7becf-a469-4d04-b2a4-ed8f60191f98" />
 
-# Generellt
-
-[] All information ska presenteras på en och samma sida.
-[] Applikationen ska vara responsiv, men du behöver inte göra värsta fina sidan med CSS.
-[x] Du har initierat projektet med Vite och TypeScript.
-[x] Du har använt någon form av linter, t.ex. ESLint/Prettier eller Biome/Oxlint och den är installerad som en dependency i projektet, samt du har skapat en konfigurationsfil som finns med i repot.
-[x] Sidan ska vara publicerad på GitHub Pages.
-
-# Vecka 1 (2-6 februari) - Grundläggande JavaScript, repetition
-
-Du ska skapa en liten "budget-app". I appen ska det finnas med:
-
-[x] 1. Ett fält för att mata in en utgift (belopp och beskrivning), och samma för inkomst
-
-[x] 2. Bredvid varje budgetpost ska det finnas en radera-knapp
-
-[x] Det ska visas en balans (inkomster minus utgifter)
-
-[] Balansens ska färgkodas beroende på om det är ett positivt eller negativt värde
-
-[] Balansen ska uppdateras varje gång en ny utgift eller inkomst matas in
-
-[] Till varje budgetpost ska det gå att välja en kategori från en dropdown-lista (select)
-
-[] Informationen ska sparas i local storage så att när användaren kommer till sidan nästa gång, så ska informationen finnas kvar. Nytt
-
-[] Kategorierna ska läsas in via JSON. Vi går igenom detta på lektionen. Nytt
