@@ -150,8 +150,8 @@ addBtn?.addEventListener("click", () => {
 ///-------------------- RENDER FUNKTION --------------------///
 function renderEntries() {
   // Töm divarna
-  incomeDiv.innerHTML = "<h3>INKOMSTER</h3>";
-  expenseDiv.innerHTML = "<h3>UTGIFTER</h3>";
+  incomeDiv.innerHTML = "<h3></h3>";
+  expenseDiv.innerHTML = "<h3></h3>";
 
   // Totalsummor
   let totalIncome = 0;
@@ -209,8 +209,8 @@ function renderEntries() {
         <p class="green">Inkomster: ${totalIncome} kr</p>
         <p class="red">Utgifter: ${totalExpense} kr</p>
       </div>
-      <h3>TOTALT</h3>
-      <p>Saldo: <span id="saldoValue">${saldo} kr</span></p>
+      <h4>TOTALT:</h4>
+      <p><span id="saldoValue">${saldo} kr</span></p>
     `;
 
     const saldoSpan = document.getElementById("saldoValue") as HTMLSpanElement;

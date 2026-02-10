@@ -7,7 +7,12 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=payment_arrow_down"
     />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sigmar+One&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>fed25d-js-inl-2-budget-app-elenaholmberg</title>
   </head>
@@ -22,48 +27,51 @@
           <h2>INKOMSTER & UTGIFTER</h2>
         </legend>
         <!--Här väljer användaren kategori-->
-        <div class="gridBox">
-          <div class="pickIncome">
-            <label>
-              <input type="radio" id="chooseIncomeBtn" name="type" />
-              INKOMST
-            </label>
+        <div class="fieldsetContainer">
+          <section class="radioBtnBox">
+            <div class="pickIncome">
+              <label>
+                <input type="radio" id="chooseIncomeBtn" name="type" />
+                INKOMST
+              </label>
 
-            <select id="incomeDropdown">
-              <option value="" disabled selected>Välj kategori</option>
-            </select>
-          </div>
+              <select id="incomeDropdown">
+                <option value="" disabled selected>Välj kategori</option>
+              </select>
+            </div>
 
-          <div class="pickExpense">
-            <label>
-              <input type="radio" id="chooseExpenseBtn" name="type" />
-              UTGIFT
-            </label>
+            <div class="pickExpense">
+              <label>
+                <input type="radio" id="chooseExpenseBtn" name="type" />
+                UTGIFT
+              </label>
 
-            <select id="expensesDropdown">
-              <option value="" disabled selected>Välj kategori</option>
-            </select>
-          </div>
-        
-
+              <select id="expensesDropdown">
+                <option value="" disabled selected>Välj kategori</option>
+              </select>
+            </div>
+          </section>
           <!--här fyller användaren i summa-->
 
           <div class="inputContainer">
             <label class="gridAmount">
-            Summa:
-              <input type="number" id="amountInput" placeholder="ex. 100/ -100" />
+              Summa:
+              <input
+                type="number"
+                id="amountInput"
+                placeholder="ex. 100/ -100"
+              />
               SEK
             </label>
 
             <label class="gridDesc">
-            Beskrivning:
+              Beskrivning:
               <input
-              type="text"
-              id="descriptionInput"
-              placeholder="ex. Lön / Fika"
-            />
+                type="text"
+                id="descriptionInput"
+                placeholder="ex. Lön / Fika"
+              />
             </label>
-       
 
             <button type="button" id="addBtn" class="addBtn">Lägg till</button>
           </div>
@@ -81,7 +89,6 @@
           </div>
 
           <div id="resultEntrie"></div>
-        </section>
         </div>
       </fieldset>
     </form>
