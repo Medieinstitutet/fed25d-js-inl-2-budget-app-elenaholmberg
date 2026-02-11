@@ -1,6 +1,12 @@
 import "./style.css";
 import categories from "./categories.json";
 
+localStorage.setItem("categories", JSON.stringify(categories));
+console.log(
+  "Kategorier sparade i localStorage:",
+  JSON.parse(localStorage.getItem("categories")!),
+);
+
 ///-------------------- INTERFACE --------------------///
 interface IbudgetItems {
   desc: string;
@@ -10,7 +16,11 @@ interface IbudgetItems {
 }
 
 ///-------------------- TYPESCRIPT --------------------///
-const budgetItems: IbudgetItems[] = [];
+// Läs in befintliga items från localStorage vid start
+const budgetItems: IbudgetItems[] = JSON.parse(
+  localStorage.getItem("budgetItems") || "[]",
+);
+
 const budgetForm: HTMLFormElement | null =
   document.querySelector("#budgetForm");
 
@@ -39,6 +49,14 @@ function registerBudgetItem(e: SubmitEvent) {
 
   // Lägg till i budgetItems array
   budgetItems.push(dataObject);
+
+  // Spara till localStorage - samma sätt som kategorier
+  localStorage.setItem("budgetItems", JSON.stringify(budgetItems));
+  console.log(
+    "Budget items sparade i localStorage:",
+    JSON.parse(localStorage.getItem("budgetItems")!),
+  );
+
   console.log("Alla budgetItems:", budgetItems);
 
   // Lägg till posten i gränssnittet
