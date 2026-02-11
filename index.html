@@ -31,22 +31,33 @@
           <section class="radioBtnBox">
             <div class="pickIncome">
               <label>
-                <input type="radio" id="chooseIncomeBtn" name="type" />
+                <input
+                  type="radio"
+                  id="chooseIncomeBtn"
+                  name="type"
+                  value="income"
+                />
                 INKOMST
               </label>
 
-              <select id="incomeDropdown">
+              <select id="incomeDropdown" name="categoryIncome">
                 <option value="" disabled selected>Välj kategori</option>
               </select>
             </div>
 
             <div class="pickExpense">
               <label>
-                <input type="radio" id="chooseExpenseBtn" name="type" />
+                <input
+                  type="radio"
+                  id="chooseExpenseBtn"
+                  name="type"
+                  value="expense"
+                />
+
                 UTGIFT
               </label>
 
-              <select id="expensesDropdown">
+              <select id="expensesDropdown" name="categoryExpense">
                 <option value="" disabled selected>Välj kategori</option>
               </select>
             </div>
@@ -56,24 +67,16 @@
           <div class="inputContainer">
             <label class="gridAmount">
               Summa:
-              <input
-                type="number"
-                id="amountInput"
-                placeholder="ex. 100/ -100"
-              />
+              <input type="number" id="amountInput" name="amount" />
               SEK
             </label>
 
             <label class="gridDesc">
               Beskrivning:
-              <input
-                type="text"
-                id="descriptionInput"
-                placeholder="ex. Lön / Fika"
-              />
+              <input type="text" id="descriptionInput" name="description" />
             </label>
 
-            <button type="button" id="addBtn" class="addBtn">Lägg till</button>
+            <button type="submit" id="addBtn" class="addBtn">Lägg till</button>
           </div>
         </div>
       </fieldset>

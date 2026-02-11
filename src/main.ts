@@ -2,17 +2,25 @@ import "./style.css";
 import categories from "./categories.json";
 
 ///Typescript///
-const budgetForm = document.querySelector(
-  "#budgetForm",
-) as HTMLFormElement | null;
+const budgetItems = [];
+const budgetForm: HTMLFormElement | null =
+  document.querySelector("#budgetForm");
 
 if (budgetForm) {
   budgetForm.addEventListener("submit", registerBudgetItem);
 }
 
-function registerBudgetItem(event: Event) {
-  event.preventDefault();
-  console.log("Formuläret skickades!");
+function registerBudgetItem(e: SubmitEvent) {
+  e.preventDefault();
+
+  const budgetData = new FormData(budgetForm!);
+
+  // Konvertera till objekt så det syns i konsolen
+  const dataObject = Object.fromEntries(budgetData.entries());
+  console.log("FormData som objekt:", dataObject);
+
+  // Lägg till posten
+  addBudgetEntry();
 }
 
 ///-------------------- FILTRERING --------------------///
@@ -122,7 +130,7 @@ amountInput.addEventListener("input", checkFormValidity);
 descriptionInput.addEventListener("input", checkFormValidity);
 
 ///-------------------- LÄGG TILL POST --------------------///
-addBtn?.addEventListener("click", () => {
+function addBudgetEntry() {
   const amount = Number(amountInput.value);
   const description = descriptionInput.value.trim();
 
@@ -145,6 +153,7 @@ addBtn?.addEventListener("click", () => {
   }
 
   const entry = { type, category, amount, description };
+  console.log("Ny post:", entry);
 
   if (type === "inkomst") incomeEntries.push(entry);
   if (type === "utgift") expenseEntries.push(entry);
@@ -157,9 +166,17 @@ addBtn?.addEventListener("click", () => {
   incomeDropdown.selectedIndex = 0;
   expensesDropdown.selectedIndex = 0;
 
+  // Avmarkera radioknappar
+  chooseIncomeBtn.checked = false;
+  chooseExpenseBtn.checked = false;
+
+  // Inaktivera dropdowns igen
+  incomeDropdown.disabled = true;
+  expensesDropdown.disabled = true;
+
   // Kolla om knappen ska stängas av igen
   checkFormValidity();
-});
+}
 
 ///-------------------- RENDER FUNKTION --------------------///
 function renderEntries() {
@@ -181,7 +198,7 @@ function renderEntries() {
 
     row.innerHTML = `
       ${item.category} | ${item.amount} kr | ${item.description}
-      <button class="deleteBtn">x</button>
+      <button class="deleteBtn" type="button">x</button>
     `;
 
     const btn = row.querySelector(".deleteBtn") as HTMLButtonElement;
@@ -203,7 +220,7 @@ function renderEntries() {
 
     row.innerHTML = `
       ${item.category} | ${item.amount} kr | ${item.description}
-      <button class="deleteBtn">x</button>
+      <button class="deleteBtn" type="button">x</button>
     `;
 
     const btn = row.querySelector(".deleteBtn") as HTMLButtonElement;
