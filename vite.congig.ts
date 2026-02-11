@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/fed25d-js-intro-inl-2-elenaholmberg/",
+  base: "/fed25d-js-inl-2-budget-app-elenaholmberg/",
 });
