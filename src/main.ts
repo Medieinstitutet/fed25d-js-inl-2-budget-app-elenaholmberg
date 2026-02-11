@@ -1,6 +1,20 @@
 import "./style.css";
 import categories from "./categories.json";
 
+///Typescript///
+const budgetForm = document.querySelector(
+  "#budgetForm",
+) as HTMLFormElement | null;
+
+if (budgetForm) {
+  budgetForm.addEventListener("submit", registerBudgetItem);
+}
+
+function registerBudgetItem(event: Event) {
+  event.preventDefault();
+  console.log("Formuläret skickades!");
+}
+
 ///-------------------- FILTRERING --------------------///
 const incomeDropdown = document.getElementById(
   "incomeDropdown",
