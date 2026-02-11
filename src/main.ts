@@ -1,8 +1,16 @@
 import "./style.css";
 import categories from "./categories.json";
 
-///Typescript///
-const budgetItems = [];
+///-------------------- INTERFACE --------------------///
+interface IbudgetItems {
+  desc: string;
+  amount: string;
+  type: "expense" | "income";
+  category: string;
+}
+
+///-------------------- TYPESCRIPT --------------------///
+const budgetItems: IbudgetItems[] = [];
 const budgetForm: HTMLFormElement | null =
   document.querySelector("#budgetForm");
 
@@ -14,12 +22,26 @@ function registerBudgetItem(e: SubmitEvent) {
   e.preventDefault();
 
   const budgetData = new FormData(budgetForm!);
+  const formData = Object.fromEntries(budgetData.entries());
 
-  // Konvertera till objekt så det syns i konsolen
-  const dataObject = Object.fromEntries(budgetData.entries());
+  // Skapa ett korrekt IbudgetItems objekt
+  const dataObject: IbudgetItems = {
+    type: formData.type as "expense" | "income",
+    amount: formData.amount as string,
+    desc: formData.description as string,
+    category:
+      formData.type === "income"
+        ? (formData.categoryIncome as string)
+        : (formData.categoryExpense as string),
+  };
+
   console.log("FormData som objekt:", dataObject);
 
-  // Lägg till posten
+  // Lägg till i budgetItems array
+  budgetItems.push(dataObject);
+  console.log("Alla budgetItems:", budgetItems);
+
+  // Lägg till posten i gränssnittet
   addBudgetEntry();
 }
 
