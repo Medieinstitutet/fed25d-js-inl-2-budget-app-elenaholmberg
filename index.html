@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=payment_arrow_down"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sigmar+One&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fed25d-js-inl-2-budget-app-elenaholmberg</title>
+  </head>
+  <body>
+    <header>
+      <h1>MIN BUDGET:</h1>
+    </header>
+
+    <form id="budgetForm">
+      <fieldset class="firstFieldset">
+        <legend>
+          <h2>INKOMSTER & UTGIFTER</h2>
+        </legend>
+        <!--Här väljer användaren kategori-->
+        <div class="fieldsetContainer">
+          <section class="radioBtnBox">
+            <div class="pickIncome">
+              <label>
+                <input
+                  type="radio"
+                  id="chooseIncomeBtn"
+                  name="type"
+                  value="income"
+                />
+                INKOMST
+              </label>
+
+              <select id="incomeDropdown" name="categoryIncome">
+                <option value="" disabled selected>Välj kategori</option>
+              </select>
+            </div>
+
+            <div class="pickExpense">
+              <label>
+                <input
+                  type="radio"
+                  id="chooseExpenseBtn"
+                  name="type"
+                  value="expense"
+                />
+
+                UTGIFT
+              </label>
+
+              <select id="expensesDropdown" name="categoryExpense">
+                <option value="" disabled selected>Välj kategori</option>
+              </select>
+            </div>
+          </section>
+          <!--här fyller användaren i summa-->
+
+          <div class="inputContainer">
+            <label class="gridAmount">
+              Summa:
+              <input type="number" id="amountInput" name="amount" />
+              SEK
+            </label>
+
+            <label class="gridDesc">
+              Beskrivning:
+              <input type="text" id="descriptionInput" name="description" />
+            </label>
+
+            <button type="submit" id="addBtn" class="addBtn">Lägg till</button>
+          </div>
+        </div>
+      </fieldset>
+
+      <!------Resultat-rutan------->
+      <fieldset class="secondFieldset">
+        <legend><h2>RESULTAT</h2></legend>
+
+        <div class="gridContainer">
+          <div class="entriesContainer">
+            <div id="incomeEntries"></div>
+            <div id="outgoingEntries"></div>
+          </div>
+
+          <div id="resultEntrie"></div>
+        </div>
+      </fieldset>
+    </form>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
