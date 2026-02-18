@@ -1,0 +1,119 @@
+const incomeInput = document.getElementById("incomeSum");
+
+| Del              | Betyder                             | Tänk                  |
+| ---------------- | ----------------------------------- | --------------------- |
+| `const`          | Skapar en variabel som inte byts ut | En fast pekare        |
+| `incomeInput`    | Namnet på variabeln                 | Vad är det för något? |
+| `document`       | Hela HTML-sidan                     | Pappret               |
+| `getElementById` | Hitta ett element via id            | Leta upp              |
+| `"incomeSum"`    | ID från HTML                        | Namnskylten           |
+
+
+//if//
+if (!value) {
+  alert("Skriv in ett tal!");
+  return;
+}
+
+
+| Del        | Betyder            |     
+| ---------- | ------------------ |
+| `if`       | Om                 |
+| `(!value)` | Om inget tal finns |
+| `{ ... }`  | Det som ska hända  |
+| `return`   | Stoppar funktionen |
+| `else`     | Annars (valfritt)  |
+
+
+Vanliga jämförelser:
+
+| Kod   | Betyder      |   |       |
+| ----- | ------------ | - | ----- |
+| `==`  | lika (slapp) |   |       |
+| `===` | exakt lika   |   |       |
+| `!=`  | inte lika    |   |       |
+| `>`   | större än    |   |       |
+| `<`   | mindre än    |   |       |
+| `&&`  | och          |   |       |
+| `     |              | ` | eller |
+
+
+
+//event//
+
+addBtn.addEventListener("click", function () {
+  alert("Du klickade!");
+});
+
+| Del              | Betyder           |
+| ---------------- | ----------------- |
+| `addBtn`         | Vad vi lyssnar på |
+| `"click"`        | Vad som händer    |
+| `function () {}` | Vad som ska göras |
+|
+
+
+Vanliga events
+
+Event       | När?             |
+| ----------- | ---------------- |
+| `"click"`   | Klick            |
+| `"submit"`  | Form skickas     |
+| `"input"`   | När man skriver  |
+| `"change"`  | När värde ändras |
+| `"keydown"` | Tangent trycks   |
+
+
+💡 Förklaringar:
+//----IN & UT-----//
+
+// Lägg till en "click"-händelse på knappen addBtn (Lägg till inkomst)
+addBtn.addEventListener("click", function () {
+
+  // 1. Hämta värdet från inkomst-inputen (incomeInput) och gör om det till ett nummer
+  //    input.value är alltid en sträng, därför använder vi Number()
+  const value = Number(incomeInput.value);
+
+  // 2. Lägg till värdet i totalIncome
+  //    totalIncome = totalIncome + value
+  //    betyder: ta det som redan finns i totalIncome och lägg till det nya värdet
+  totalIncome = totalIncome + value;
+
+  // 3. Visa det nya totala värdet i inputen resultInput (calculateIncome i HTML)
+  resultInput.value = totalIncome;
+
+  // 4. Töm inputfältet incomeInput så användaren kan skriva en ny inkomst utan att radera manuellt
+  incomeInput.value = "";
+});
+
+//---Totalt----//
+
+document.getElementById("totalSum") → kopplar JS till HTML-elementet med id totalSum.
+
+function updateTotal() → //skapar en egen funktion som gör uträkningen när vi vill. updateTotal är ett ord som jag själv väljer. I denna funktionen ska allt räknas ihop
+
+const result = totalIncome - totalExpense → //använder siffrorna vi sparat i minnet, inte HTML-elementen, och räknar skillnaden.
+
+totalSum.value = result → //visar resultatet i input-rutan på sidan.
+
+
+
+//färgkoda
+
+if (result >= 0) {
+  totalSum.style.color = "green";
+} else {
+  totalSum.style.color = "red";
+}
+Förklaring rad för rad:
+
+totalSum.style.color = "green" → //ändrar textfärg i inputen till grön.
+
+totalSum.style.color = "red" → //ändrar textfärg till röd om vi har minusbalans.
+
+if (result >= 0) → //inkluderar noll som plus, annars röd.
+
+
+
+
+Tecknet Pipe | skrivs med option + 7
